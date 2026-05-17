@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলাদেশে সেরা মোবাইল - সম্পূর্ণ সুবিধা অসুবিধা বিশ্লেষণ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #a0aec0;
+        }
+
+        /* Phone Cards Detailed */
+        .phone-section {
+            margin-bottom: 50px;
+            animation: fadeIn 0.8s ease-out backwards;
+        }
+
+        .phone-section:nth-child(1) { animation-delay: 0.2s; }
+        .phone-section:nth-child(2) { animation-delay: 0.4s; }
+        .phone-section:nth-child(3) { animation-delay: 0.6s; }
+
+        .phone-header {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(0, 212, 255, 0.1));
+            border: 2px solid rgba(124, 58, 237, 0.5);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .price-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .phone-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .phone-model {
+            color: #00d4ff;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .phone-price {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            padding: 20px 30px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .price-box .amount {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .price-box .label {
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Pros and Cons Grid */
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .pros-box, .cons-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .pros-box {
+            border-left: 4px solid #4ade80;
+        }
+
+        .cons-box {
+            border-left: 4px solid #f87171;
+        }
+
+        .pros-box h3, .cons-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pros-box h3 {
+            color: #4ade80;
+        }
+
+        .cons-box h3 {
+            color: #f87171;
+        }
+
+        .pros-list, .cons-list {
+            list-style: none;
+        }
+
+        .pros-list li, .cons-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .pros-list li:last-child, .cons-list li:last-child {
+            border-bottom: none;
+        }
+
+        .pros-list li::before {
+            content: '✓';
+            color: #4ade80;
+            font-weight: 800;
+            font-size: 1.2rem;
+            min-width: 25px;
+        }
+
+        .cons-list li::before {
+            content: '✗';
+            color: #f87171;
+            font-weight: 800;
+            font-size: 1.2rem;
+            min-width: 25px;
+        }
+
+        /* Specs Section */
+        .specs-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .specs-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #7c3aed;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .spec-item {
+            background: rgba(124, 58, 237, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
+
+        .spec-label {
+            color: #a78bfa;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .spec-value {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Rating Section */
+        .rating-section {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.1));
+            border: 2px solid rgba(251, 191, 36, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .rating-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #fbbf24;
+        }
+
+        .rating-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .rating-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .rating-label {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .rating-stars {
+            font-size: 1.3rem;
+            color: #fbbf24;
+            letter-spacing: 3px;
+        }
+
+        /* Verdict Section */
+        .verdict-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(34, 197, 94, 0.1));
+            border: 2px solid rgba(34, 197, 94, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .verdict-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #4ade80;
+        }
+
+        .verdict-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        .best-for {
+            margin-top: 15px;
+            background: rgba(34, 197, 94, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4ade80;
+        }
+
+        .best-for-label {
+            color: #4ade80;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .best-for-text {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        /* Comparison Summary */
+        .comparison-summary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(124, 58, 237, 0.4);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: scaleUp 0.8s ease-out 1s backwards;
+        }
+
+        .comparison-summary h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .comparison-item {
+            background: rgba(124, 58, 237, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .comparison-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.6);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .comparison-item h4 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .comparison-item p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Recommendation Box */
+        .final-recommendation {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(59, 130, 246, 0.15));
+            border: 2px solid rgba(16, 185, 129, 0.4);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 50px 0;
+            backdrop-filter: blur(10px);
+            animation: slideUp 0.8s ease-out 1.2s backwards;
+        }
+
+        .final-recommendation h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #10b981;
+        }
+
+        .final-recommendation p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .decision-tree {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .decision-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+        }
+
+        .decision-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .decision-question {
+            color: #00d4ff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+        }
+
+        .decision-answer {
+            color: #cbd5e1;
+            margin-left: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #7c3aed;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(124, 58, 237, 0.3);
+            color: #a0aec0;
+            font-size: 0.95rem;
+            animation: fadeIn 0.8s ease-out 1.4s backwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleUp {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .pros-cons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-price {
+                flex-direction: column;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>বাংলাদেশে সেরা মোবাইল ফোন</h1>
+            <p>সম্পূর্ণ সুবিধা ও অসুবিধা বিশ্লেষণ - ২০২৬</p>
+        </div>
+
+        <!-- PHONE 1: Galaxy M35 5G -->
+        <div class="phone-section">
+            <div class="phone-header">
+                <div class="price-badge">🏆 প্রিমিয়াম পছন্দ</div>
+                <div class="phone-title">স্যামসাং গ্যালাক্সি M35 5G</div>
+                <div class="phone-model">8GB RAM / 128GB স্টোরেজ</div>
+                <div class="phone-price">
+                    <div class="price-box">
+                        <div class="amount">৳২৩,৯৯৯</div>
+                        <div class="label">অফিসিয়াল মূল্য</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specs -->
+            <div class="specs-section">
+                <h3>📋 প্রযুক্তিগত বৈশিষ্ট্য</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">প্রসেসর</div>
+                        <div class="spec-value">Exynos 1380 (5nm)</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">র‍্যাম</div>
+                        <div class="spec-value">8GB</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">স্টোরেজ</div>
+                        <div class="spec-value">128GB (সম্প্রসারণযোগ্য)</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">ডিসপ্লে</div>
+                        <div class="spec-value">৬.৬" Super AMOLED, 120Hz</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">মূল ক্যামেরা</div>
+                        <div class="spec-value">৫০MP OIS f/1.8</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">ব্যাটারি</div>
+                        <div class="spec-value">৬০০০ mAh, 25W</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">অপারেটিং সিস্টেম</div>
+                        <div class="spec-value">Android 14 + One UI</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">নেটওয়ার্ক</div>
+                        <div class="spec-value">2G/3G/4G/5G</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pros and Cons -->
+            <div class="pros-cons-grid">
+                <div class="pros-box">
+                    <h3>✅ সুবিধা (Pros)</h3>
+                    <ul class="pros-list">
+                        <li><strong>সর্বোচ্চ ব্যাটারি:</strong> ৬০০০ mAh - ২ দিন পর্যন্ত চার্জ থাকে</li>
+                        <li><strong>সেরা ডিসপ্লে:</strong> AMOLED প্রযুক্তি - রঙ এবং কনট্রাস্ট অসাধারণ</li>
+                        <li><strong>OIS ক্যামেরা:</strong> রাতে অস্পষ্টতা ছাড়াই ছবি তোলে</li>
+                        <li><strong>120Hz রিফ্রেশ:</strong> সব কাজে অতি মসৃণ অভিজ্ঞতা</li>
+                        <li><strong>5G সাপোর্ট:</strong> দ্রুত ইন্টারনেট গতি</li>
+                        <li><strong>Stereo স্পিকার:</strong> ভিডিও এবং গেমিং-এর জন্য দুর্দান্ত সাউন্ড</li>
+                        <li><strong>NFC পেমেন্ট:</strong> বেতার লেনদেন সুবিধা</li>
+                        <li><strong>স্যামসাং ব্র্যান্ড:</strong> নির্ভরযোগ্য এবং সেবা সহজ</li>
+                        <li><strong>Gorilla Glass 5:</strong> স্ক্রিন প্রটেকশন ভালো</li>
+                        <li><strong>দ্রুত ফিঙ্গারপ্রিন্ট:</strong> আন্ডার-ডিসপ্লে সেন্সর</li>
+                    </ul>
+                </div>
+
+                <div class="cons-box">
+                    <h3>❌ অসুবিধা (Cons)</h3>
+                    <ul class="cons-list">
+                        <li><strong>পানিরোধী নয়:</strong> IP রেটিং নেই - পানিতে পড়লে নষ্ট হতে পারে</li>
+                        <li><strong>প্লাস্টিক বডি:</strong> প্রিমিয়াম নয় - সহজে স্ক্র্যাচ হয়</li>
+                        <li><strong>দ্রুত তাপমাত্রা বৃদ্ধি:</strong> ভারী গেমিংয়ে ফোন গরম হয়</li>
+                        <li><strong>চার্জিং স্লো:</strong> ২৫W মানে ২ ঘন্টা লাগে সম্পূর্ণ চার্জে</li>
+                        <li><strong>ভারী ওজন:</strong> ২২২ গ্রাম - দীর্ঘদিন ধরলে হাত ক্লান্ত হয়</li>
+                        <li><strong>হিট ম্যানেজমেন্ট:</strong> লম্বা সময় ব্যবহারে তাপ সমস্যা</li>
+                        <li><strong>চার্জার বক্সে নেই:</strong> আলাদা কিনতে হয় (২৫W)</li>
+                        <li><strong>দাম বেশি:</strong> ২৫,০০০ টাকা - সবার জন্য সাশ্রয়ী নয়</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ratings -->
+            <div class="rating-section">
+                <h3>⭐ পারফরমেন্স রেটিং</h3>
+                <div class="rating-grid">
+                    <div class="rating-item">
+                        <div class="rating-label">ব্যাটারি লাইফ</div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">ক্যামেরা মান</div>
+                        <div class="rating-stars">★★★★☆</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">ডিসপ্লে কোয়ালিটি</div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">পারফরমেন্স</div>
+                        <div class="rating-stars">★★★★☆</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">স্থায়িত্ব</div>
+                        <div class="rating-stars">★★★★☆</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">মূল্য</div>
+                        <div class="rating-stars">★★★☆☆</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Verdict -->
+            <div class="verdict-section">
+                <h3>🎯 চূড়ান্ত মূল্যায়ন</h3>
+                <div class="verdict-text">
+                    স্যামসাং গ্যালাক্সি M35 5G হল ২৫,০০০ টাকা বাজেটে সবচেয়ে সম্পূর্ণ ফোন। এর সর্বোচ্চ ব্যাটারি লাইফ এবং অসাধারণ AMOLED ডিসপ্লে দীর্ঘদিন স্ক্রিন টাইমের জন্য পারফেক্ট। OIS ক্যামেরা রাতের ফটোগ্রাফি-তে অতুলনীয়। যারা বাজেট নিয়ে চিন্তা করেন না তাদের জন্য এটি আদর্শ পছন্দ।
+                </div>
+                <div class="best-for">
+                    <span class="best-for-label">👥 এর জন্য উপযুক্ত:</span>
+                    <div class="best-for-text">
+                        যারা দীর্ঘ ব্যাটারি লাইফ চান • অনেক ভিডিও দেখেন • ছবির মান গুরুত্বপূর্ণ • স্যামসাং ভক্ত • প্রিমিয়াম ডিসপ্লে পছন্দ করেন
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHONE 2: Realme C75x -->
+        <div class="phone-section">
+            <div class="phone-header">
+                <div class="price-badge">⭐ সেরা টেকসই</div>
+                <div class="phone-title">রিয়েল মি C75x</div>
+                <div class="phone-model">6GB RAM / 128GB স্টোরেজ</div>
+                <div class="phone-price">
+                    <div class="price-box">
+                        <div class="amount">৳১৭,৯৯৯</div>
+                        <div class="label">অফিসিয়াল মূল্য</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specs -->
+            <div class="specs-section">
+                <h3>📋 প্রযুক্তিগত বৈশিষ্ট্য</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">প্রসেসর</div>
+                        <div class="spec-value">MediaTek Helio G81 Ultra</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">র‍্যাম</div>
+                        <div class="spec-value">6GB</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">স্টোরেজ</div>
+                        <div class="spec-value">128GB (সম্প্রসারণযোগ্য)</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">ডিসপ্লে</div>
+                        <div class="spec-value">৬.৬৭" IPS LCD, 120Hz</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">মূল ক্যামেরা</div>
+                        <div class="spec-value">৫০MP AI কোয়াড</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">ব্যাটারি</div>
+                        <div class="spec-value">৫৬০০ mAh, 45W</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">পানিরোধী</div>
+                        <div class="spec-value">IP68/IP69 সার্টিফাইড</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">নেটওয়ার্ক</div>
+                        <div class="spec-value">2G/3G/4G (5G নেই)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pros and Cons -->
+            <div class="pros-cons-grid">
+                <div class="pros-box">
+                    <h3>✅ সুবিধা (Pros)</h3>
+                    <ul class="pros-list">
+                        <li><strong>IP68/IP69 পানিরোধী:</strong> পুলে ডুব দিলেও নিরাপদ - ২৪ ঘন্টা ২ মিটার গভীরে থাকতে পারে</li>
+                        <li><strong>সুপার ফাস্ট চার্জিং:</strong> ৪৫W মাত্র ৯০ মিনিটে সম্পূর্ণ চার্জ</li>
+                        <li><strong>Military Grade সুরক্ষা:</strong> MIL-STD-810H সার্টিফাইড - ঝরে পড়লেও টিকবে</li>
+                        <li><strong>ArmorShell গ্লাস:</strong> ৩৫% বেশি লিথিয়াম-অ্যালুমিনিয়াম সহ শক্তিশালী</li>
+                        <li><strong>120Hz ডিসপ্লে:</strong> গেমিং এবং স্ক্রলিং অনন্য মসৃণ</li>
+                        <li><strong>ভালো ব্যাটারি লাইফ:</strong> ৫৬০০ mAh দিয়ে ১.৫ দিন চলে</li>
+                        <li><strong>ওয়াটার ইজেকশন:</strong> সাউন্ড স্পিকার নিজেই পানি বের করে</li>
+                        <li><strong>সাশ্রয়ী দাম:</strong> ১৭,৯৯৯ টাকায় সব ফিচার</li>
+                        <li><strong>AI ক্যামেরা:</strong> কোয়াড সেটআপ বিভিন্ন পরিস্থিতিতে ভালো</li>
+                        <li><strong>Reverse চার্জিং:</strong> অন্য ডিভাইস চার্জ করতে পারে</li>
+                    </ul>
+                </div>
+
+                <div class="cons-box">
+                    <h3>❌ অসুবিধা (Cons)</h3>
+                    <ul class="cons-list">
+                        <li><strong>5G নেই:</strong> শুধু 4G সাপোর্ট - ভবিষ্যত প্রযুক্তি নেই</li>
+                        <li><strong>LCD ডিসপ্লে:</strong> AMOLED না হওয়ায় রঙ কম প্রাণবন্ত</li>
+                        <li><strong>কম র‍্যাম:</strong> ৬GB শুধু - ভারী মাল্টিটাস্কিং-এ ল্যাগ হতে পারে</li>
+                        <li><strong>MediaTek প্রসেসর:</strong> Exynos বা Snapdragon এর মতো শক্তিশালী নয়</li>
+                        <li><strong>ভারী ফোন:</strong> পানিরোধী হওয়ায় ১৯০ গ্রাম - দীর্ঘদিন ধরলে হাত ক্লান্ত</li>
+                        <li><strong>সীমিত সার্ভিস নেটওয়ার্ক:</strong> রিয়েল মি এর সার্ভিস সেন্টার কম</li>
+                        <li><strong>চার্জার বক্সে নেই:</strong> ৪৫W চার্জার আলাদা কিনতে হয়</li>
+                        <li><strong>গেমিং পারফরমেন্স:</strong> হেভি গেমে ফ্রেম ড্রপ হতে পারে</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ratings -->
+            <div class="rating-section">
+                <h3>⭐ পারফরমেন্স রেটিং</h3>
+                <div class="rating-grid">
+                    <div class="rating-item">
+                        <div class="rating-label">স্থায়িত্ব</div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">চার্জিং গতি</div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">ব্যাটারি লাইফ</div>
+                        <div class="rating-stars">★★★★☆</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">ডিসপ্লে কোয়ালিটি</div>
+                        <div class="rating-stars">★★★☆☆</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">পারফরমেন্স</div>
+                        <div class="rating-stars">★★★★☆</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">মূল্য</div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Verdict -->
+            <div class="verdict-section">
+                <h3>🎯 চূড়ান্ত মূল্যায়ন</h3>
+                <div class="verdict-text">
+                    রিয়েল মি C75x হল ১৮,০০০ টাকা বাজেটে সবচেয়ে টেকসই পছন্দ। IP68/IP69 সার্টিফিকেশন এবং MIL-STD-810H স্ট্যান্ডার্ড মানে এটি যেকোনো অবস্থায় টিকবে। ৪৫W সুপার চার্জিং অনন্য ফিচার। যারা কঠোর পরিবেশে ফোন ব্যবহার করেন বা ভ্রমণ পছন্দ করেন তাদের জন্য আদর্শ।
+                </div>
+                <div class="best-for">
+                    <span class="best-for-label">👥 এর জন্য উপযুক্ত:</span>
+                    <div class="best-for-text">
+                        যারা ভ্রমণ পছন্দ করেন • আউটডোর কাজ করেন • পানি খেলা করতে পারে এমন চান • দ্রুত চার্জিং চান • টেকসই ফোন খুঁজছেন
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHONE 3: Samsung A06 5G -->
+        <div class="phone-section">
+            <div class="phone-header">
+                <div class="price-badge">💎 বেস্ট ভ্যালু</div>
+                <div class="phone-title">স্যামসাং গ্যালাক্সি A06 5G</div>
+                <div class="phone-model">6GB RAM / 128GB স্টোরেজ</div>
+                <div class="phone-price">
+                    <div class="price-box">
+                        <div class="amount">৳১৫,০০০</div>
+                        <div class="label">আনুমানিক মূল্য</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specs -->
+            <div class="specs-section">
+                <h3>📋 প্রযুক্তিগত বৈশিষ্ট্য</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">প্রসেসর</div>
+                        <div class="spec-value">MediaTek Dimensity 6300</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">র‍্যাম</div>
+                        <div class="spec-value">6GB</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">স্টোরেজ</div>
+                        <div class="spec-value">128GB (সম্প্রসারণযোগ্য)</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">ডিসপ্লে</div>
+                        <div class="spec-value">৬.৭" PLS LCD, 90Hz</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">মূল ক্যামেরা</div>
+                        <div class="spec-value">৫০MP প্রধান + 2MP গভীরতা</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">ব্যাটারি</div>
+                        <div class="spec-value">৫০০০ mAh, 25W</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">প্রটেকশন</div>
+                        <div class="spec-value">Gorilla Glass</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">নেটওয়ার্ক</div>
+                        <div class="spec-value">2G/3G/4G/5G</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pros and Cons -->
+            <div class="pros-cons-grid">
+                <div class="pros-box">
+                    <h3>✅ সুবিধা (Pros)</h3>
+                    <ul class="pros-list">
+                        <li><strong>সাশ্রয়ী মূল্য:</strong> ১৫,০০০ টাকায় স্যামসাং কোয়ালিটি</li>
+                        <li><strong>5G সাপোর্ট:</strong> ভবিষ্যত প্রযুক্তির জন্য প্রস্তুত</li>
+                        <li><strong>স্যামসাং ব্র্যান্ড:</strong> নির্ভরযোগ্য এবং লম্বা সফটওয়্যার আপডেট</li>
+                        <li><strong>৬.৭" বড় ডিসপ্লে:</strong> ভিডিও দেখা এবং পড়া সহজ</li>
+                        <li><strong>৫০MP ক্যামেরা:</strong> দিনের আলোতে ভালো ছবি</li>
+                        <li><strong>দ্রুত ফিঙ্গারপ্রিন্ট:</strong> সাইড-মাউন্টেড সেন্সর দ্রুত</li>
+                        <li><strong>সার্ভিস সেন্টার বেশি:</strong> স্যামসাং সার্ভিস সর্বত্র পাওয়া যায়</li>
+                        <li><strong>Gorilla Glass:</strong> স্ক্রিন সুরক্ষা ভালো</li>
+                        <li><strong>One UI ইন্টারফেস:</strong> ব্যবহারকারী-বান্ধব এবং পরিষ্কার</li>
+                        <li><strong>ভালো দৈনন্দিন পারফরমেন্স:</strong> Facebook, YouTube, WhatsApp মসৃণভাবে চলে</li>
+                    </ul>
+                </div>
+
+                <div class="cons-box">
+                    <h3>❌ অসুবিধা (Cons)</h3>
+                    <ul class="cons-list">
+                        <li><strong>কম ব্যাটারি:</strong> ৫০০০ mAh মাত্র ১ দিন চলে</li>
+                        <li><strong>90Hz ডিসপ্লে:</strong> 120Hz না হওয়ায় কম মসৃণ অনুভব</li>
+                        <li><strong>LCD স্ক্রিন:</strong> AMOLED না হওয়ায় রঙ কম প্রাণবন্ত</li>
+                        <li><strong>ধীর চার্জিং:</strong> ২৫W মানে ২ ঘন্টা লাগে পূর্ণ চার্জে</li>
+                        <li><strong>গেমিং পারফরমেন্স:</strong> ভারী গেমে ফ্রেম ড্রপ হতে পারে</li>
+                        <li><strong>পানিরোধী নয়:</strong> কোন IP রেটিং নেই - পানিতে ঝুঁকিপূর্ণ</li>
+                        <li><strong>কম র‍্যাম:</strong> ৬GB ভারী মাল্টিটাস্কিং-এ সীমাবদ্ধ</li>
+                        <li><strong>প্লাস্টিক বডি:</strong> প্রিমিয়াম অনুভূতি নেই</li>
+                        <li><strong>রাতের ফটোগ্রাফি:</strong> OIS নেই - রাতে ঝাপসা ছবি হয়</li>
+                        <li><strong>চার্জার অন্তর্ভুক্ত নয়:</strong> আলাদা কিনতে হয়</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ratings -->
+            <div class="rating-section">
+                <h3>⭐ পারফরমেন্স রেটিং</h3>
+                <div class="rating-grid">
+                    <div class="rating-item">
+                        <div class="rating-label">মূল্য</div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">ব্র্যান্ড নির্ভরযোগ্যতা</div>
+                        <div class="rating-stars">★★★★★</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">ব্যাটারি লাইফ</div>
+                        <div class="rating-stars">★★★☆☆</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">ক্যামেরা মান</div>
+                        <div class="rating-stars">★★★★☆</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">পারফরমেন্স</div>
+                        <div class="rating-stars">★★★★☆</div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-label">ডিসপ্লে কোয়ালিটি</div>
+                        <div class="rating-stars">★★★☆☆</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Verdict -->
+            <div class="verdict-section">
+                <h3>🎯 চূড়ান্ত মূল্যায়ন</h3>
+                <div class="verdict-text">
+                    স্যামসাং গ্যালাক্সি A06 5G হল ১৫,০০০ টাকা বাজেটে সেরা মূল্য প্রস্তাব। স্যামসাং ব্র্যান্ডের নির্ভরযোগ্যতা এবং দীর্ঘমেয়াদী সফটওয়্যার সাপোর্ট এই দামে অতুলনীয়। 5G সাপোর্ট সহ ৫০MP ক্যামেরা ভবিষ্যত-প্রস্তুত। যারা সীমিত বাজেটে ভালো স্মার্টফোন খুঁজছেন তাদের জন্য আদর্শ।
+                </div>
+                <div class="best-for">
+                    <span class="best-for-label">👥 এর জন্য উপযুক্ত:</span>
+                    <div class="best-for-text">
+                        ছাত্র-ছাত্রী • সীমিত বাজেট • দীর্ঘমেয়াদী সেবা চান • স্যামসাং পছন্দ করেন • প্রথম স্মার্টফোন কেনার জন্য
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Summary -->
+        <div class="comparison-summary">
+            <h2>📊 তিনটি ফোনের সম্পূর্ণ তুলনা</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>স্যামসাং M35 5G</h4>
+                    <p><strong>সেরা:</strong> ব্যাটারি লাইফ এবং ডিসপ্লে</p>
+                    <p><strong>দাম:</strong> ৳২৩,৯৯৯</p>
+                    <p><strong>আদর্শ:</strong> যারা সেরা প্রযুক্তি চান</p>
+                </div>
+
+                <div class="comparison-item">
+                    <h4>রিয়েল মি C75x</h4>
+                    <p><strong>সেরা:</strong> স্থায়িত্ব এবং চার্জিং</p>
+                    <p><strong>দাম:</strong> ৳১৭,৯৯৯</p>
+                    <p><strong>আদর্শ:</strong> যারা কঠোর ব্যবহার করেন</p>
+                </div>
+
+                <div class="comparison-item">
+                    <h4>স্যামসাং A06 5G</h4>
+                    <p><strong>সেরা:</strong> মূল্য এবং নির্ভরযোগ্যতা</p>
+                    <p><strong>দাম:</strong> ৳১৫,০০০</p>
+                    <p><strong>আদর্শ:</strong> বাজেট সচেতন ক্রেতা</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Recommendation -->
+        <div class="final-recommendation">
+            <h2>🎯 আপনার জন্য সঠিক পছন্দ কীভাবে করবেন?</h2>
+            <div class="decision-tree">
+                <div class="decision-item">
+                    <div class="decision-question">❓ আপনি কত ঘন্টা দৈনিক ফোন ব্যবহার করেন?</div>
+                    <div class="decision-answer">
+                        <strong>৬+ ঘন্টা:</strong> M35 5G নিন (সর্বোচ্চ ব্যাটারি)<br>
+                        <strong>৪-৬ ঘন্টা:</strong> C75x নিন (দ্রুত চার্জিং সুবিধা)<br>
+                        <strong>২-৪ ঘন্টা:</strong> A06 5G ঠিক আছে
+                    </div>
+                </div>
+
+                <div class="decision-item">
+                    <div class="decision-question">❓ আপনি পানির পরিবেশে কাজ করেন?</div>
+                    <div class="decision-answer">
+                        <strong>হ্যাঁ (সৈকত, খেলা, ট্রেকিং):</strong> C75x নিন (IP68/IP69)<br>
+                        <strong>কখনও কখনও:</strong> M35 5G বা A06 5G ঠিক<br>
+                        <strong>না:</strong> M35 5G সেরা
+                    </div>
+                </div>
+
+                <div class="decision-item">
+                    <div class="decision-question">❓ আপনার বাজেট কত টাকা?</div>
+                    <div class="decision-answer">
+                        <strong>২৫+ হাজার:</strong> M35 5G - প্রিমিয়াম ফিচার সব পাবেন<br>
+                        <strong>১৮-২২ হাজার:</strong> C75x - সেরা বৈশিষ্ট্য এই দামে<br>
+                        <strong>১৫ হাজার বা কম:</strong> A06 5G - সাশ্রয়ী এবং নির্ভরযোগ্য
+                    </div>
+                </div>
+
+                <div class="decision-item">
+                    <div class="decision-question">❓ আপনি রাতে ছবি তুলতে চান?</div>
+                    <div class="decision-answer">
+                        <strong>হ্যাঁ, প্রায়ই:</strong> M35 5G নিন (OIS ক্যামেরা)<br>
+                        <strong>মাঝে মাঝে:</strong> C75x বা A06 5G ঠিক<br>
+                        <strong>শুধু দিনে তুলি:</strong> সব ফোন একই
+                    </div>
+                </div>
+
+                <div class="decision-item">
+                    <div class="decision-question">❓ আপনি ভারী গেমিং খেলবেন?</div>
+                    <div class="decision-answer">
+                        <strong>PUBG, COD খেলি:</strong> M35 5G সেরা (শক্তিশালী প্রসেসর)<br>
+                        <strong>হালকা গেমিং:</strong> C75x ঠিক<br>
+                        <strong>গেমিং খেলি না:</strong> A06 5G যথেষ্ট
+                    </div>
+                </div>
+
+                <div class="decision-item">
+                    <div class="decision-question">❓ আপনি দীর্ঘ ভিডিও দেখেন?</div>
+                    <div class="decision-answer">
+                        <strong>প্রতিদিন ৪+ ঘন্টা:</strong> M35 5G নিন (AMOLED সেরা)<br>
+                        <strong>মাঝে মাঝে:</strong> C75x বা A06 5G ঠিক<br>
+                        <strong>খুব কম দেখি:</strong> সব ফোন সমান
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px; color: #4ade80;">চূড়ান্ত পরামর্শ:</h3>
+            <p>
+                <strong>যদি আপনি সবকিছু নিয়েই আপস করতে পারবেন না:</strong> স্যামসাং M35 5G নিন। এটি সর্বোত্তম ব্যাটারি লাইফ, সেরা ডিসপ্লে এবং ভালো ক্যামেরা সব কিছুতেই এগিয়ে।
+            </p>
+            <p style="margin-top: 15px;">
+                <strong>যদি আপনি বাইরে অনেক সময় কাটান এবং পানিতে ঝুঁকি থাকে:</strong> রিয়েল মি C75x নিন। এর পানিরোধী বৈশিষ্ট্য এবং দ্রুত চার্জিং এটিকে অনন্য করে।
+            </p>
+            <p style="margin-top: 15px;">
+                <strong>যদি আপনার বাজেট সীমিত এবং দীর্ঘমেয়াদী সেবা গুরুত্বপূর্ণ:</strong> স্যামসাং A06 5G নিন। স্যামসাং ব্র্যান্ড, 5G সাপোর্ট এবং সস্তা দাম এর সংমিশ্রণ দুর্দান্ত।
+            </p>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="final-recommendation" style="background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(245, 158, 11, 0.1)); border-color: rgba(251, 146, 60, 0.4);">
+            <h2 style="color: #fb923c;">⚠️ কেনার আগে গুরুত্বপূর্ণ পরামর্শ</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(251, 146, 60, 0.3);">
+                    <strong>✓ অফিসিয়াল স্টোর থেকে কিনুন:</strong> স্টার টেক, রিও ইন্টারন্যাশনাল, স্যামসাং স্টোর বা অনুমোদিত ডিলার থেকে কিনুন যাতে ওয়ারেন্টি এবং সেবা নিশ্চিত হয়।
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(251, 146, 60, 0.3);">
+                    <strong>✓ পেমেন্ট পরিকল্পনা:</strong> EMI সুবিধা নেওয়ার চেয়ে নগদ কিনুন। EMI-তে অতিরিক্ত সুদ দিতে হয়।
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(251, 146, 60, 0.3);">
+                    <strong>✓ ওয়ারেন্টি সময়কাল:</strong> সাধারণত ১ বছর ওয়ারেন্টি পাবেন। বিবরণ দেখে নিন।
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(251, 146, 60, 0.3);">
+                    <strong>✓ এক্সটেন্ডেড ওয়ারেন্টি:</strong> ২-৩ বছরের এক্সটেন্ডেড ওয়ারেন্টি কিনলে দীর্ঘমেয়াদে লাভজনক।
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(251, 146, 60, 0.3);">
+                    <strong>✓ স্ক্রিন প্রটেক্টর এবং কেস:</strong> প্রথম দিনেই টেম্পার্ড গ্লাস এবং সিলিকন কেস লাগান।
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(251, 146, 60, 0.3);">
+                    <strong>✓ ব্যাটারি সংরক্ষণ:</strong> প্রথম ৩ দিন ৮ ঘন্টা করে চার্জ করুন যাতে ব্যাটারি সঠিকভাবে ক্যালিব্রেট হয়।
+                </li>
+                <li style="padding: 10px 0;">
+                    <strong>✓ ত্রুটি পরীক্ষা:</strong> প্রথম ৭ দিনের মধ্যে সব ফিচার পরীক্ষা করুন। কোন সমস্যা থাকলে এক্সচেঞ্জ করান।
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>📱 আপনার পছন্দ যাই হোক না কেন, নিশ্চিত করুন যে এটি আপনার দৈনন্দিন চাহিদা পূরণ করে।</p>
+            <p style="margin-top: 15px;">💡 প্রযুক্তি দ্রুত পরিবর্তন হয়, তাই বাজার গবেষণা করে এবং বিক্রেতার পরামর্শ নিয়ে সিদ্ধান্ত নিন।</p>
+            <p style="margin-top: 15px;">🎉 সঠিক পছন্দ করুন এবং আপনার স্মার্টফোন জীবনকে আনন্দময় করে তুলুন!</p>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #7c3aed;">আপডেট: মে ২০২৬ | তথ্য বিভিন্ন উৎস থেকে সংগৃহীত</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.phone-section').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
