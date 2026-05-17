@@ -1,0 +1,1897 @@
+Hulk
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abs@r Sir's Coaching - Premium Portal</title>
+<!-- Tailwind CSS for rich modern grid layout -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Icons & Bengali Font (Hind Siliguri) & English Font (Inter) -->
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+
+<style>
+  body {
+    font-family: 'Hind Siliguri', 'Inter', sans-serif;
+    background-color: #030712; /* Deeper Indigo Black */
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  /* Advanced Glassmorphism & Neon Shadows */
+  .glass-panel {
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  
+  .glass-card-blue {
+    background: rgba(30, 41, 59, 0.45);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05), 0 10px 30px -10px rgba(59, 130, 246, 0.15);
+  }
+
+  .glass-card-emerald {
+    background: rgba(30, 41, 59, 0.45);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05), 0 10px 30px -10px rgba(16, 185, 129, 0.15);
+  }
+
+  .glass-card-rose {
+    background: rgba(30, 41, 59, 0.45);
+    border: 1px solid rgba(244, 63, 94, 0.25);
+    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05), 0 10px 30px -10px rgba(244, 63, 94, 0.15);
+  }
+
+  .glass-card-indigo {
+    background: rgba(30, 41, 59, 0.45);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05), 0 10px 30px -10px rgba(99, 102, 241, 0.15);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 99px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  .active-tab {
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    color: white !important;
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.35);
+  }
+
+  @keyframes pulse-neon {
+    0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
+    33% { transform: scale(1.15) translate(30px, -50px); opacity: 0.3; }
+    66% { transform: scale(0.9) translate(-20px, 20px); opacity: 0.15; }
+  }
+
+  .neon-glow-1 { animation: pulse-neon 15s infinite ease-in-out; }
+  .neon-glow-2 { animation: pulse-neon 18s infinite ease-in-out 3s; }
+  .neon-glow-3 { animation: pulse-neon 20s infinite ease-in-out 6s; }
+
+  /* Highlighting search matching text */
+  .search-highlight {
+    background-color: rgba(234, 179, 8, 0.3);
+    color: #fef08a;
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+
+  @media print {
+    .no-print { display: none !important; }
+    body { background: white !important; color: black !important; }
+    .print-card { border: 1px solid #cbd5e1 !important; box-shadow: none !important; background: white !important; }
+  }
+</style>
+</head>
+<body class="flex flex-col text-slate-100 min-h-screen relative pb-12 overflow-x-hidden">
+
+  <!-- Interactive Background Neon Blobs -->
+  <div class="fixed inset-0 -z-10 overflow-hidden no-print" id="bgGlowContainer">
+    <div id="glowBlob1" class="neon-glow-1 absolute top-[-10%] left-[-10%] w-[550px] h-[550px] bg-cyan-500/20 rounded-full blur-[130px] transition-all duration-700 ease-out"></div>
+    <div id="glowBlob2" class="neon-glow-2 absolute top-[40%] right-[-10%] w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[140px] transition-all duration-700 ease-out"></div>
+    <div id="glowBlob3" class="neon-glow-3 absolute bottom-[-10%] left-[20%] w-[520px] h-[520px] bg-rose-500/20 rounded-full blur-[150px] transition-all duration-700 ease-out"></div>
+  </div>
+
+  <!-- FLOATING DYNAMIC NOTIFICATION TOAST -->
+  <div id="toastNotification" class="fixed top-5 right-5 z-50 transform translate-y-[-120px] scale-90 opacity-0 pointer-events-none transition-all duration-500 max-w-sm bg-slate-900/95 border border-cyan-500/50 text-white rounded-2xl p-4 shadow-[0_0_40px_rgba(6,182,212,0.15)] flex items-center gap-3 backdrop-blur-xl">
+    <div id="toastIconContainer" class="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl">
+      <span id="toastIcon" class="material-symbols-rounded text-xl">check_circle</span>
+    </div>
+    <div class="flex-1">
+      <h5 id="toastTitle" class="text-xs font-bold text-slate-300">সফল নোটিফিকেশন</h5>
+      <p id="toastMessage" class="text-xs text-slate-100 font-semibold mt-0.5">তথ্য ক্লিপবোর্ডে কপি করা হয়েছে!</p>
+    </div>
+    <button onclick="hideToast()" class="text-slate-400 hover:text-slate-100">
+      <span class="material-symbols-rounded text-base">close</span>
+    </button>
+  </div>
+
+  <!-- MAIN TOP NAV -->
+  <header class="no-print bg-slate-950/80 border-b border-white/5 text-white sticky top-0 z-40 backdrop-blur-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <div class="p-2.5 bg-gradient-to-tr from-cyan-500/10 to-indigo-500/10 rounded-2xl shadow-xl border border-white/10 flex items-center justify-center">
+          <svg class="h-10 w-10 text-cyan-400 filter drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+            <path d="M12 17.27l-5.5-3 1.41-1.41L12 14.45l4.09-2.59 1.41 1.41-5.5 3z" opacity=".8"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-xl sm:text-2xl font-black tracking-tight bg-gradient-to-r from-white via-cyan-200 to-indigo-200 bg-clip-text text-transparent">আবছার স্যার'স কোচিং সেন্টার</h1>
+            <span class="bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">Premium</span>
+          </div>
+          <p class="text-[11px] text-slate-300 font-medium tracking-wide">মাস্টার ড্যাশবোর্ড: উপস্থিতি হাজিরা, পেমেন্ট ও ডিরেক্ট প্যারেন্ট কানেক্ট</p>
+        </div>
+      </div>
+      
+      <!-- Quick System Settings -->
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="bg-white/5 hover:bg-white/10 transition-colors duration-200 px-3 py-1.5 rounded-xl border border-white/10 flex items-center gap-2 shadow-inner">
+          <span class="text-xs text-slate-300 font-semibold">ফি:</span>
+          <input type="number" id="systemFee" value="1500" class="bg-transparent font-bold w-16 text-center outline-none border-b border-white/20 text-cyan-400 focus:border-cyan-400">
+          <span class="text-xs text-cyan-400">৳</span>
+        </div>
+        <div class="bg-white/5 hover:bg-white/10 transition-colors duration-200 px-3 py-1.5 rounded-xl border border-white/10 flex items-center gap-2 shadow-inner">
+          <span class="text-xs text-slate-300 font-semibold">বছর:</span>
+          <input type="text" id="systemYear" value="২০২৬" class="bg-transparent font-bold w-14 text-center outline-none border-b border-white/20 text-indigo-300 focus:border-indigo-300">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- DASHBOARD CONTENT CONTAINER -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+    <!-- STATS BLOCKS -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+      <!-- Collected block -->
+      <div class="print-card glass-card-emerald p-5 rounded-3xl flex items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-emerald-500/20 hover:shadow-2xl">
+        <div>
+          <p class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">মোট আদায় হয়েছে</p>
+          <h3 class="text-2xl font-black text-emerald-300 mt-1" id="dashCollected">৳০</h3>
+          <div class="mt-2 text-[10px] text-emerald-400/80 font-bold flex items-center gap-1">
+            <span class="material-symbols-rounded text-xs">trending_up</span> চলতি বছরের সম্পূর্ণ প্রাপ্তি
+          </div>
+        </div>
+        <div class="p-3 bg-emerald-500/20 text-emerald-300 rounded-2xl border border-emerald-500/30">
+          <span class="material-symbols-rounded text-3xl">payments</span>
+        </div>
+      </div>
+
+      <!-- Pending block -->
+      <div class="print-card glass-card-rose p-5 rounded-3xl flex items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-rose-500/20 hover:shadow-2xl">
+        <div>
+          <p class="text-[10px] font-bold text-rose-400 uppercase tracking-wider">মোট বকেয়া পাওনা</p>
+          <h3 class="text-2xl font-black text-rose-300 mt-1" id="dashDue">৳০</h3>
+          <div class="mt-2 text-[10px] text-rose-400/80 font-bold flex items-center gap-1">
+            <span class="material-symbols-rounded text-xs">warning</span> বকেয়া আদায়ে গুরুত্ব দিন
+          </div>
+        </div>
+        <div class="p-3 bg-rose-500/20 text-rose-300 rounded-2xl border border-rose-500/30">
+          <span class="material-symbols-rounded text-3xl">pending_actions</span>
+        </div>
+      </div>
+
+      <!-- Attendance block -->
+      <div class="print-card glass-card-blue p-5 rounded-3xl flex items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-blue-500/20 hover:shadow-2xl">
+        <div>
+          <p class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">গড় উপস্থিতি হার</p>
+          <h3 class="text-2xl font-black text-blue-300 mt-1" id="dashAttendance">০%</h3>
+          <div class="w-24 bg-slate-800 rounded-full h-1.5 mt-2 overflow-hidden border border-white/5">
+            <div id="dashAttendanceProgress" class="bg-gradient-to-r from-blue-400 to-indigo-400 h-1.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+        <div class="p-3 bg-blue-500/20 text-blue-300 rounded-2xl border border-blue-500/30">
+          <span class="material-symbols-rounded text-3xl">done_all</span>
+        </div>
+      </div>
+
+      <!-- Student count block -->
+      <div class="print-card glass-card-indigo p-5 rounded-3xl flex items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-indigo-500/20 hover:shadow-2xl">
+        <div>
+          <p class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">সক্রিয় ছাত্র-ছাত্রী</p>
+          <h3 class="text-2xl font-black text-indigo-300 mt-1" id="dashStudents">০ জন</h3>
+          <div class="mt-2 text-[10px] text-indigo-400/80 font-bold flex items-center gap-1">
+            <span class="material-symbols-rounded text-xs">group</span> নিয়মিত রেজিস্টার্ড শিক্ষার্থী
+          </div>
+        </div>
+        <div class="p-3 bg-indigo-500/20 text-indigo-300 rounded-2xl border border-indigo-500/30">
+          <span class="material-symbols-rounded text-3xl">assignment_ind</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTROL UNIT PANELS -->
+    <div class="no-print glass-panel p-4 rounded-3xl mb-6 flex flex-col md:flex-row gap-4 items-center justify-between border-white/5">
+      <!-- Main Tabs System -->
+      <div class="flex bg-slate-950/60 p-1.5 rounded-2xl w-full md:w-auto overflow-x-auto border border-white/5 custom-scrollbar">
+        <button onclick="switchTab('payment')" id="tabBtnPayment" class="active-tab flex-1 md:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition-all duration-200 whitespace-nowrap">
+          <span class="material-symbols-rounded text-base">paid</span> পেমেন্ট খাতা
+        </button>
+        <button onclick="switchTab('attendance')" id="tabBtnAttendance" class="flex-1 md:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition-all duration-200 whitespace-nowrap">
+          <span class="material-symbols-rounded text-base">calendar_month</span> উপস্থিতি হাজিরা
+        </button>
+        <button onclick="switchTab('contact')" id="tabBtnContact" class="flex-1 md:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition-all duration-200 whitespace-nowrap relative">
+          <span class="material-symbols-rounded text-base">call_quality</span> জরুরি যোগাযোগ
+          <span id="contactBadge" class="hidden absolute top-1 right-2 flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+          </span>
+        </button>
+        <button onclick="switchTab('students')" id="tabBtnStudents" class="flex-1 md:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition-all duration-200 whitespace-nowrap">
+          <span class="material-symbols-rounded text-base">manage_accounts</span> শিক্ষার্থী তালিকা
+        </button>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="flex flex-wrap items-center gap-3 w-full md:w-auto justify-end">
+        <div class="relative w-full sm:w-64">
+          <span class="material-symbols-rounded absolute left-3 top-2.5 text-slate-400 text-lg">search</span>
+          <input type="text" id="mainSearch" oninput="triggerSearch()" placeholder="নাম বা মোবাইল দিয়ে খুঁজুন..." class="w-full pl-9 pr-4 py-2.5 bg-slate-950/60 border border-white/10 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-slate-900/60 transition-all">
+        </div>
+        
+        <!-- Utilities -->
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="p-2.5 bg-white/5 border border-white/10 hover:bg-white/10 text-slate-300 rounded-xl transition-all" title="প্রিন্ট রিপোর্ট">
+            <span class="material-symbols-rounded text-sm">print</span>
+          </button>
+          <button onclick="exportFullData()" class="p-2.5 bg-white/5 border border-white/10 hover:bg-white/10 text-slate-300 rounded-xl transition-all" title="ব্যাকআপ ডাউনলোড">
+            <span class="material-symbols-rounded text-sm">cloud_download</span>
+          </button>
+          <button onclick="document.getElementById('importFile').click()" class="p-2.5 bg-white/5 border border-white/10 hover:bg-white/10 text-slate-300 rounded-xl transition-all" title="ব্যাকআপ আপলোড">
+            <span class="material-symbols-rounded text-sm">cloud_upload</span>
+          </button>
+          <input type="file" id="importFile" accept=".json" class="hidden" onchange="importFullData(event)">
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEWPORT 1: PAYMENT -->
+    <div id="paymentView" class="glass-panel rounded-3xl overflow-hidden transition-all duration-300 border-white/5">
+      <div class="no-print p-4 bg-slate-900/40 border-b border-white/5 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+          <span class="text-[10px] font-bold text-slate-300">সবুজ = পরিশোধিত</span>
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.5)] ml-3"></span>
+          <span class="text-[10px] font-bold text-slate-300">হলুদ = আংশিক</span>
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.5)] ml-3"></span>
+          <span class="text-[10px] font-bold text-slate-300">লাল = বকেয়া</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="markAllMonthsPaid()" class="text-xs font-bold bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-95 text-white px-3.5 py-2 rounded-xl flex items-center gap-1 shadow-sm transition-all hover:scale-[1.02]">
+            <span class="material-symbols-rounded text-sm">done_all</span> সম্পূর্ণ পেইড করুন
+          </button>
+          <button onclick="confirmResetAll('payment')" class="text-xs font-bold bg-rose-500/15 hover:bg-rose-500/25 text-rose-300 px-3.5 py-2 rounded-xl flex items-center gap-1 border border-rose-500/20 transition-all hover:scale-[1.02]">
+            <span class="material-symbols-rounded text-sm">delete_sweep</span> সম্পূর্ণ ক্লিয়ার
+          </button>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div class="overflow-x-auto custom-scrollbar">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-950/40 text-slate-300 text-xs font-bold uppercase tracking-wider border-b border-white/5">
+              <th class="py-4 px-4 text-center w-12">ক্র.</th>
+              <th class="py-4 px-5 text-left min-w-[180px]">শিক্ষার্থীর নাম ও মোবাইল</th>
+              <!-- Months headers generated dynamically in JS -->
+              <th class="py-4 px-4 text-center min-w-[100px] bg-emerald-500/5 text-emerald-300 border-b border-white/5">মোট আদায়</th>
+              <th class="py-4 px-4 text-center min-w-[100px] bg-rose-500/5 text-rose-300 border-b border-white/5">মোট বকেয়া</th>
+            </tr>
+          </thead>
+          <tbody id="paymentTableBody" class="divide-y divide-white/5 text-sm text-slate-200">
+            <!-- Rendered inside the script -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- VIEWPORT 2: ATTENDANCE -->
+    <div id="attendanceView" class="hidden glass-panel rounded-3xl overflow-hidden transition-all duration-300 border-white/5">
+      <div class="no-print p-4 bg-slate-900/40 border-b border-white/5 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="flex items-center gap-1.5">
+            <label class="text-xs font-bold text-slate-400">মাস:</label>
+            <select id="attendanceMonth" onchange="loadAttendanceSheet()" class="bg-slate-900 text-slate-100 border border-white/10 px-3 py-1.5 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <!-- Populated via script -->
+            </select>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <label class="text-xs font-bold text-slate-400">দিন:</label>
+            <select id="attendanceDay" onchange="loadAttendanceSheet()" class="bg-slate-900 text-slate-100 border border-white/10 px-3 py-1.5 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <!-- Populated dynamically -->
+            </select>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="setAllAttendance('present')" class="text-xs font-bold bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 hover:text-emerald-100 px-3.5 py-2 rounded-xl border border-emerald-500/20 transition-all">
+            ✓ সকলকে উপস্থিত করুন
+          </button>
+          <button onclick="setAllAttendance('absent')" class="text-xs font-bold bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 hover:text-rose-100 px-3.5 py-2 rounded-xl border border-rose-500/20 transition-all">
+            ✗ সকলকে অনুপস্থিত করুন
+          </button>
+        </div>
+      </div>
+
+      <!-- DYNAMIC DUAL PRESENT/ABSENT VISUAL PANEL -->
+      <div class="p-5 border-b border-white/5 bg-slate-950/40">
+        <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3.5 flex items-center gap-1.5">
+          <span class="material-symbols-rounded text-sm text-cyan-400">query_stats</span> আজকের রিয়েল-টাইম হাজিরা সারসংক্ষেপ
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Present Box -->
+          <div class="bg-emerald-950/15 border border-emerald-500/15 rounded-2xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> উপস্থিত শিক্ষার্থী
+              </span>
+              <span id="livePresentCount" class="text-xs font-extrabold bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-lg border border-emerald-500/20">০ জন</span>
+            </div>
+            <div id="livePresentNames" class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto custom-scrollbar pr-1 text-[11px] text-slate-300">
+              <!-- Names rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Absent Box -->
+          <div class="bg-rose-950/15 border border-rose-500/15 rounded-2xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-rose-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span> অনুপস্থিত শিক্ষার্থী
+              </span>
+              <span id="liveAbsentCount" class="text-xs font-extrabold bg-rose-500/20 text-rose-300 px-2.5 py-0.5 rounded-lg border border-rose-500/20">০ জন</span>
+            </div>
+            <div id="liveAbsentNames" class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto custom-scrollbar pr-1 text-[11px] text-slate-300">
+              <!-- Names rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Leave Box -->
+          <div class="bg-amber-950/15 border border-amber-500/15 rounded-2xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-amber-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span> ছুটিতে আছে
+              </span>
+              <span id="liveLeaveCount" class="text-xs font-extrabold bg-amber-500/20 text-amber-300 px-2.5 py-0.5 rounded-lg border border-amber-500/20">০ জন</span>
+            </div>
+            <div id="liveLeaveNames" class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto custom-scrollbar pr-1 text-[11px] text-slate-300">
+              <!-- Names rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Input Grid Sheet -->
+      <div class="overflow-x-auto custom-scrollbar">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-950/40 text-slate-300 text-xs font-bold uppercase tracking-wider border-b border-white/5">
+              <th class="py-4 px-4 text-center w-12">ক্র.</th>
+              <th class="py-4 px-5 text-left min-w-[200px]">শিক্ষার্থীর নাম ও মোবাইল</th>
+              <th class="py-4 px-4 text-center min-w-[250px]">আজকের হাজিরা দিন</th>
+              <th class="py-4 px-4 text-center min-w-[150px] bg-white/5">চলতি মাসের পারফরম্যান্স</th>
+            </tr>
+          </thead>
+          <tbody id="attendanceTableBody" class="divide-y divide-white/5 text-sm text-slate-200">
+            <!-- Attendance rows populated via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- VIEWPORT 3: URGENT CONTACT -->
+    <div id="contactView" class="hidden glass-panel rounded-3xl overflow-hidden transition-all duration-300 border-white/5">
+      <div class="no-print p-4 bg-slate-900/40 border-b border-white/5 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <!-- Main Filter Selector -->
+          <button onclick="switchContactFilter('unpaid')" id="btnContactFilter_unpaid" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md transition-all">
+            <span class="material-symbols-rounded text-sm">pending_actions</span> বকেয়া শিক্ষার্থী (Unpaid)
+          </button>
+          <button onclick="switchContactFilter('absent')" id="btnContactFilter_absent" class="px-4 py-2 bg-white/5 text-slate-300 rounded-xl text-xs font-bold flex items-center gap-1.5 border border-white/10 hover:bg-white/10 transition-all">
+            <span class="material-symbols-rounded text-sm">event_busy</span> অনুপস্থিত শিক্ষার্থী (Absent)
+          </button>
+        </div>
+        
+        <!-- Nested Dropdown Filters for Advanced Filtering -->
+        <div class="flex items-center gap-3">
+          <!-- Unpaid Dropdown Filters -->
+          <div id="unpaidFilterDropdownContainer" class="flex items-center gap-1.5">
+            <label class="text-xs font-bold text-slate-400">বকেয়া ফিল্টার:</label>
+            <select id="contactUnpaidDropdown" onchange="renderContactList()" class="bg-slate-950 text-slate-200 border border-white/10 px-3 py-1.5 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option value="all">সব বকেয়া শিক্ষার্থী</option>
+              <option value="1">১ মাসের বকেয়া</option>
+              <option value="2">২ মাসের বকেয়া</option>
+              <option value="3">৩+ মাসের বকেয়া</option>
+            </select>
+          </div>
+
+          <!-- Absent Dropdown Filters -->
+          <div id="absentFilterDropdownContainer" class="hidden flex items-center gap-1.5">
+            <label class="text-xs font-bold text-slate-400">অনুপস্থিতি ফিল্টার:</label>
+            <select id="contactAbsentDropdown" onchange="renderContactList()" class="bg-slate-950 text-slate-200 border border-white/10 px-3 py-1.5 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option value="today">আজ অনুপস্থিত</option>
+              <option value="multi">৩+ দিন অনুপস্থিত (চলতি মাসে)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contacts Table -->
+      <div class="overflow-x-auto custom-scrollbar">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-950/40 text-slate-300 text-xs font-bold uppercase tracking-wider border-b border-white/5">
+              <th class="py-4 px-4 text-center w-12">ক্র.</th>
+              <th class="py-4 px-5 text-left min-w-[180px]">শিক্ষার্থীর নাম ও মোবাইল</th>
+              <th class="py-4 px-4 text-center min-w-[150px]" id="contactColDynamicLabel">বকেয়া মাসসমূহ ও মোট পরিমাণ</th>
+              <th class="py-4 px-6 text-center min-w-[320px]">দ্রুত হোয়াটসঅ্যাপ মেসেজ ও কল সুবিধা</th>
+            </tr>
+          </thead>
+          <tbody id="contactTableBody" class="divide-y divide-white/5 text-sm text-slate-200">
+            <!-- Populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- VIEWPORT 4: STUDENTS LIST/MANAGEMENT -->
+    <div id="studentsView" class="hidden glass-panel rounded-3xl overflow-hidden transition-all duration-300 border-white/5">
+      <div class="no-print p-4 bg-slate-900/40 border-b border-white/5 flex items-center justify-between">
+        <h4 class="text-sm font-bold text-slate-300">শিক্ষার্থী ডাটাবেজ নিয়ন্ত্রণ প্যানেল</h4>
+        <button onclick="openAddStudentModal()" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 hover:opacity-95 text-white px-4.5 py-2.5 rounded-xl flex items-center gap-1.5 shadow-md transition-all hover:scale-[1.02]">
+          <span class="material-symbols-rounded text-sm">person_add</span> নতুন শিক্ষার্থী যুক্ত করুন
+        </button>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-950/40 text-slate-300 text-xs font-bold uppercase tracking-wider border-b border-white/5">
+              <th class="py-4 px-4 text-center w-12">ক্রমিক</th>
+              <th class="py-4 px-5 text-left min-w-[200px]">শিক্ষার্থীর নাম</th>
+              <th class="py-4 px-5 text-left min-w-[180px]">মোবাইল নম্বর</th>
+              <th class="py-4 px-4 text-center min-w-[120px]">অ্যাকশন বাটন</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody" class="divide-y divide-white/5 text-sm text-slate-200">
+            <!-- Student CRUD rows dynamically built -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MODAL: PAYMENT UPDATE -->
+  <div id="paymentModal" class="hidden no-print fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-900/95 border border-white/10 rounded-3xl w-full max-w-md overflow-hidden shadow-2xl transform transition-all duration-300 scale-95 opacity-0" id="paymentModalContent">
+      <div class="px-6 py-5 bg-gradient-to-r from-blue-600 to-indigo-700 text-white flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-rounded">payments</span>
+          <h3 class="text-lg font-bold">পেমেন্ট আপডেট করুন</h3>
+        </div>
+        <button onclick="closePaymentModal()" class="text-white/80 hover:text-white transition-all">
+          <span class="material-symbols-rounded">close</span>
+        </button>
+      </div>
+      <div class="p-6 space-y-5">
+        <div>
+          <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">শিক্ষার্থী ও মাস</p>
+          <h4 id="payModalStudentName" class="text-base font-bold text-slate-100 mt-1">রাব্বি মুৎসুদ্দী</h4>
+          <span id="payModalMonthName" class="inline-block mt-2 bg-blue-500/20 text-blue-300 border border-blue-500/20 text-xs font-extrabold px-3 py-1 rounded-full">জানুয়ারি ২০২৬</span>
+        </div>
+        
+        <!-- Status buttons inside glass modal -->
+        <div>
+          <label class="block text-xs font-bold text-slate-400 mb-2">পেমেন্ট স্ট্যাটাস সিলেক্ট করুন</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button onclick="setPayModalStatus('unpaid')" id="payStatusBtn_unpaid" class="py-3 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-1 border transition-all">
+              <span class="material-symbols-rounded text-rose-400">cancel</span>বকেয়া
+            </button>
+            <button onclick="setPayModalStatus('partial')" id="payStatusBtn_partial" class="py-3 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-1 border transition-all">
+              <span class="material-symbols-rounded text-amber-400">incomplete_circle</span>আংশিক
+            </button>
+            <button onclick="setPayModalStatus('paid')" id="payStatusBtn_paid" class="py-3 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-1 border transition-all">
+              <span class="material-symbols-rounded text-emerald-400">check_circle</span>পরিশোধিত
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-400 mb-1.5">আদায়ের পরিমাণ (৳)</label>
+            <input type="number" id="payModalAmount" class="w-full px-4 py-2.5 bg-slate-950/50 text-white border border-white/10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-400 mb-1.5">তারিখ সিলেক্ট করুন</label>
+            <input type="date" id="payModalDate" class="w-full px-4 py-2.5 bg-slate-950/50 text-white border border-white/10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-400 mb-1.5">বিশেষ নোট (ঐচ্ছিক)</label>
+          <input type="text" id="payModalNote" placeholder="পেমেন্ট সংক্রান্ত বিবরণ..." class="w-full px-4 py-2.5 bg-slate-950/50 text-white border border-white/10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+      </div>
+      <div class="px-6 py-4 bg-slate-950/30 border-t border-white/10 flex items-center justify-end gap-3">
+        <button onclick="closePaymentModal()" class="px-4 py-2.5 border border-white/10 hover:bg-white/5 rounded-xl text-sm font-semibold text-slate-300 transition-all">বাতিল</button>
+        <button onclick="savePaymentModalData()" class="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-sm font-semibold shadow-md transition-all">সংরক্ষণ করুন</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD / EDIT STUDENT -->
+  <div id="studentModal" class="hidden no-print fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-900/95 border border-white/10 rounded-3xl w-full max-w-md overflow-hidden shadow-2xl transform transition-all duration-300 scale-95 opacity-0" id="studentModalContent">
+      <div class="px-6 py-5 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-rounded">person_add_alt</span>
+          <h3 class="text-lg font-bold" id="studentModalTitle">নতুন শিক্ষার্থী যুক্ত করুন</h3>
+        </div>
+        <button onclick="closeStudentModal()" class="text-white/80 hover:text-white transition-all">
+          <span class="material-symbols-rounded">close</span>
+        </button>
+      </div>
+      <div class="p-6 space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-400 mb-1.5">শিক্ষার্থীর নাম</label>
+          <input type="text" id="studModalName" placeholder="বাংলায় সম্পূর্ণ নাম লিখুন..." class="w-full px-4 py-2.5 bg-slate-950/50 text-white border border-white/10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-400 mb-1.5">মোবাইল নম্বর</label>
+          <input type="text" id="studModalPhone" placeholder="018XXXXXXXX" class="w-full px-4 py-2.5 bg-slate-950/50 text-white border border-white/10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+      </div>
+      <div class="px-6 py-4 bg-slate-950/30 border-t border-white/10 flex items-center justify-end gap-3">
+        <button onclick="closeStudentModal()" class="px-4 py-2.5 border border-white/10 hover:bg-white/5 rounded-xl text-sm font-semibold text-slate-300 transition-all">বাতিল</button>
+        <button onclick="saveStudentModalData()" class="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white rounded-xl text-sm font-semibold shadow-md transition-all">সংরক্ষণ করুন</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: DYNAMIC MESSAGE BUILDER/CUSTOMIZER -->
+  <div id="messageComposerModal" class="hidden no-print fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-900/95 border border-white/10 rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl transform transition-all duration-300 scale-95 opacity-0" id="messageComposerContent">
+      <div class="px-6 py-5 bg-gradient-to-r from-teal-600 to-cyan-700 text-white flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-rounded">chat_bubble</span>
+          <h3 class="text-lg font-bold">বার্তা কাস্টমাইজ করুন</h3>
+        </div>
+        <button onclick="closeMessageComposer()" class="text-white/80 hover:text-white transition-all">
+          <span class="material-symbols-rounded">close</span>
+        </button>
+      </div>
+      <div class="p-6 space-y-4">
+        <div>
+          <span class="text-xs font-bold text-slate-400 block mb-1">প্রাপক শিক্ষার্থী:</span>
+          <span id="composerStudentName" class="text-sm font-bold text-slate-100">রাব্বি মুৎসুদ্দী</span>
+          <span id="composerStudentPhone" class="text-xs text-cyan-400 font-mono ml-2 font-bold">01818968599</span>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-400 mb-1.5">মেসেজের বিবরণ (সম্পাদনা করুন):</label>
+          <textarea id="composerTextarea" rows="5" class="w-full px-4 py-3 bg-slate-950/60 text-slate-100 border border-white/10 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 custom-scrollbar"></textarea>
+        </div>
+        <div class="p-3 bg-cyan-950/20 border border-cyan-500/20 rounded-xl text-[11px] text-cyan-300 flex items-start gap-2">
+          <span class="material-symbols-rounded text-sm mt-0.5">info</span>
+          <span>হোয়াটসঅ্যাপ, এসএমএস অথবা ক্লিপবোর্ডে কপি করার পূর্বে আপনার সুবিধামতো মেসেজের টেক্সট যেকোনো কিছু পরিবর্তন করতে পারেন।</span>
+        </div>
+      </div>
+      <div class="px-6 py-4 bg-slate-950/30 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+        <div class="text-[10px] text-slate-400 font-semibold" id="composerCharCount">০ অক্ষর</div>
+        <div class="flex items-center gap-2">
+          <button onclick="closeMessageComposer()" class="px-4 py-2 border border-white/10 hover:bg-white/5 rounded-xl text-xs font-semibold text-slate-300 transition-all">বাতিল</button>
+          
+          <!-- Dispatch Buttons -->
+          <button id="composerDispatchWhatsappBtn" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-semibold shadow-md transition-all flex items-center gap-1.5">
+            <span class="material-symbols-rounded text-sm">chat_bubble</span> WhatsApp সরাসরি
+          </button>
+          <button id="composerDispatchSmsBtn" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-semibold shadow-md transition-all flex items-center gap-1.5">
+            <span class="material-symbols-rounded text-sm">sms</span> SMS পাঠান
+          </button>
+          <button id="composerDispatchCopyBtn" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold shadow-md transition-all flex items-center gap-1.5">
+            <span class="material-symbols-rounded text-xs">content_copy</span> কপি করুন
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOM ALERT DIALOG MODAL -->
+  <div id="customAlertDialog" class="hidden no-print fixed inset-0 bg-slate-950/80 backdrop-blur-md z-[100] flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-white/10 rounded-3xl w-full max-w-sm overflow-hidden shadow-2xl p-6 text-center">
+      <div class="mx-auto w-12 h-12 bg-rose-500/20 text-rose-400 rounded-full flex items-center justify-center mb-4 border border-rose-500/30">
+        <span class="material-symbols-rounded text-2xl">error_outline</span>
+      </div>
+      <h3 class="text-base font-bold text-slate-100" id="alertTitle">আপনি কি নিশ্চিত?</h3>
+      <p class="text-xs text-slate-300 mt-2 leading-relaxed" id="alertDesc">এই অ্যাকশনটি সম্পন্ন করার পর পূর্ববর্তী রেকর্ড বাতিল করা হতে পারে।</p>
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <button id="alertCancelBtn" class="px-4 py-2 bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 rounded-xl text-xs font-semibold transition-all">বাতিল</button>
+        <button id="alertConfirmBtn" class="px-5 py-2 bg-rose-600 hover:bg-rose-500 text-white rounded-xl text-xs font-semibold shadow-md transition-all">নিশ্চিত করুন</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="no-print bg-slate-950 text-slate-400 py-6 text-center border-t border-slate-900 text-xs mt-auto relative z-10">
+    <p>© ২০২৬ আবছার স্যার'স কোচিং সেন্টার। সর্বস্বত্ব সংরক্ষিত।</p>
+    <p class="text-slate-600 mt-1">সিস্টেম পারফরম্যান্স: হাই-স্পিড লোকাল ইন-মেমোরি প্রসেসিং অ্যাক্টিভ আছে</p>
+  </footer>
+
+  <!-- JAVASCRIPT SYSTEM ENGINE -->
+  <script>
+    const monthNames = ["জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"];
+    const monthNamesShort = ["জানু", "ফেব্রু", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টে", "অক্টো", "নভে", "ডিসে"];
+
+    // Default pre-loaded coaching students
+    let defaultStudents = [
+      { id: "1", sl:"০১", name:"রাব্বি মুৎসুদ্দী", phone:"01818968599" },
+      { id: "2", sl:"০২", name:"আকিব উদ্দীন", phone:"01824502259" },
+      { id: "3", sl:"০৩", name:"জাহিদুল ইসলাম জিসান", phone:"01877701019" },
+      { id: "4", sl:"০৪", name:"মীর ইলহাম মাহদিন", phone:"01883884515" },
+      { id: "5", sl:"০৫", name:"অপূর্ব বড়ুয়া", phone:"01811884578" },
+      { id: "6", sl:"০৬", name:"আফফান বিন খোরশেদ", phone:"01640404563" },
+      { id: "7", sl:"০৭", name:"সাজিদুল ইসলাম চৌধুরী", phone:"01832444707" },
+      { id: "8", sl:"০৮", name:"আফতাহী হক চৌধুরী", phone:"01893084057" },
+      { id: "9", sl:"০৯", name:"মোঃ নোমান", phone:"01892961591" },
+      { id: "10", sl:"১০", name:"সত্যজিত বড়ুয়া চৌধুরী", phone:"01859369470" },
+      { id: "11", sl:"১১", name:"প্রিয়ান্ত দেব নাথ", phone:"01839173652" },
+      { id: "12", sl:"১২", name:"অর্ক বড়ুয়া", phone:"01816724465" },
+      { id: "13", sl:"১৩", name:"রাকিবুল ইসলাম", phone:"01864624088" },
+      { id: "14", sl:"১৪", name:"আবিদুর রহমান", phone:"01877617436" },
+      { id: "15", sl:"১৫", name:"মোঃ মেজবাহ উদ্দীন সোহান", phone:"01991948014" },
+      { id: "16", sl:"১৬", name:"মোঃ হাসান", phone:"01880930751" },
+      { id: "17", sl:"১৭", name:"ইফতিখারুল আলম রোহান", phone:"01625354833" },
+      { id: "18", sl:"১৮", name:"মোঃ সোহান চৌধুরী", phone:"01890083305" },
+      { id: "19", sl:"১৯", name:"মোহাম্মদ রায়হান", phone:"01816157290" },
+      { id: "20", sl:"২০", name:"প্রীতম বড়ুয়া", phone:"01813575180" },
+      { id: "21", sl:"২১", name:"ধ্রুব বড়ুয়া", phone:"01813235680" },
+      { id: "22", sl:"২২", name:"আহনাফ মুনতাসির", phone:"01825012416" },
+      { id: "23", sl:"২৩", name:"মোহাম্মদ হৃদয় হোসেন", phone:"01957984416" },
+      { id: "24", sl:"২৪", name:"মোঃ সাখাওয়াত", phone:"01846267486" },
+      { id: "25", sl:"২৫", name:"শামিন সাওবান", phone:"01831139184" },
+      { id: "26", sl:"২৬", name:"মুস্তাকিম সাউদ", phone:"01971717377" },
+      { id: "27", sl:"২৭", name:"মেহেদী হাসান হৃদয়", phone:"01776600598" },
+      { id: "28", sl:"২৮", name:"মোঃ জাহিদুল ইসলাম", phone:"01881241597" },
+      { id: "29", sl:"২৯", name:"ত্রিদীপ বড়ুয়া", phone:"01816197111" },
+      { id: "30", sl:"৩০", name:"সাদিক হুসাইন", phone:"01830769499" },
+      { id: "31", sl:"৩১", name:"সাফায়েত আলম মাহি", phone:"01822344266" },
+      { id: "32", sl:"৩২", name:"শুভ পাল", phone:"01719228671" },
+      { id: "33", sl:"৩৩", name:"আহমেদ হোসাইন তানভীর", phone:"01914253986" },
+      { id: "34", sl:"৩৪", name:"কাজি সাফায়েত ইসলাম", phone:"01866804346" },
+      { id: "35", sl:"৩৫", name:"রাহুল বড়ুয়া", phone:"01865465070" },
+      { id: "36", sl:"৩৬", name:"মোঃ আয়ান হোসেন", phone:"01727995710" },
+      { id: "37", sl:"৩৭", name:"ফয়েজ উদ্দিন মিশকাত", phone:"01814440004" },
+      { id: "38", sl:"৩৮", name:"অতিক মজুমদার", phone:"01623384649" },
+      { id: "39", sl:"৩৯", name:"আবদুল্লাহ মুহাম্মদ রাইয়ান", phone:"01811810690" },
+      { id: "40", sl:"৪০", name:"আকিব আল হাসান", phone:"01814041708" },
+      { id: "41", sl:"৪১", name:"আতিউর রহমান তাওফিক", phone:"01879725354" },
+      { id: "42", sl:"৪২", name:"ফাহিম আহমেদ", phone:"01731886713" },
+      { id: "43", sl:"৪৩", name:"সাইফ ও শাহারিয়ার নাঈম", phone:"01609079404" },
+      { id: "44", sl:"৪৪", name:"মুজাহিদ", phone:"01818869143" },
+      { id: "45", sl:"৪৫", name:"ইজাজ মাহমুদ", phone:"01752822828" },
+      { id: "46", sl:"৪৬", name:"হামিম", phone:"01819809136" },
+      { id: "47", sl:"৪৭", name:"তাইফুর রায়হান", phone:"01760611375" },
+      { id: "48", sl:"৪৮", name:"মোঃ সাদমান", phone:"01888636879" },
+      { id: "49", sl:"৪৯", name:"আত্মমাইন", phone:"01818438677" },
+      { id: "50", sl:"৫০", name:"অপিকুর রহমান", phone:"01837836763" },
+      { id: "51", sl:"৫১", name:"শ্রাবণ মারমা", phone:"01849635351" },
+      { id: "52", sl:"৫২", name:"মোঃ ইসমাইল", phone:"01820980137" },
+      { id: "53", sl:"৫৩", name:"মোঃ শাহাদাৎ হোসেন তাওসির", phone:"01824932499" },
+      { id: "54", sl:"৫৪", name:"মোঃ রাইহানুল মুনির", phone:"01881497044" },
+      { id: "55", sl:"৫৫", name:"আশপাক", phone:"01840459326" },
+      { id: "56", sl:"৫৬", name:"সজিদুল আলম সামির", phone:"01817786684" },
+      { id: "57", sl:"৫৭", name:"ইফতেকার আহমেদ ইশান", phone:"01947493199" },
+      { id: "58", sl:"৫৮", name:"সাফিন", phone:"01825271683" },
+      { id: "59", sl:"৫৯", name:"আরমানুল ইসলাম", phone:"01811921877" },
+      { id: "60", sl:"৬০", name:"সিনান", phone:"01818142458" },
+      { id: "61", sl:"৬১", name:"আবরার হোসাইন", phone:"01814504493" },
+      { id: "62", sl:"৬২", name:"তাহমিদ", phone:"01850412762" },
+      { id: "63", sl:"৬৩", name:"সিফাত উদ্দিন", phone:"01818081934" }
+    ];
+
+    // Reactive State
+    let students = [];
+    let paymentData = {}; 
+    let attendanceData = {}; 
+    let currentTab = 'payment';
+    let searchQuery = '';
+    let currentContactFilter = 'unpaid';
+
+    let activeEditMonth = null;
+    let activeEditStudentId = null;
+    let activePayStatus = 'unpaid';
+    let activeStudentEditId = null;
+
+    // Interactive Background Pointer Physics (Desktop)
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 60;
+      const y = (e.clientY / window.innerHeight - 0.5) * 60;
+      
+      const blob1 = document.getElementById('glowBlob1');
+      const blob2 = document.getElementById('glowBlob2');
+      const blob3 = document.getElementById('glowBlob3');
+      
+      if(blob1 && blob2 && blob3) {
+        blob1.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
+        blob2.style.transform = `translate(${x * -0.7}px, ${y * -0.7}px)`;
+        blob3.style.transform = `translate(${x * 0.3}px, ${y * -0.3}px)`;
+      }
+    });
+
+    // Custom Alert Dialog System
+    function showCustomAlert(title, desc, onConfirm) {
+      const dialog = document.getElementById('customAlertDialog');
+      const aTitle = document.getElementById('alertTitle');
+      const aDesc = document.getElementById('alertDesc');
+      const confirmBtn = document.getElementById('alertConfirmBtn');
+      const cancelBtn = document.getElementById('alertCancelBtn');
+
+      aTitle.textContent = title;
+      aDesc.textContent = desc;
+      dialog.classList.remove('hidden');
+
+      const cleanup = () => {
+        dialog.classList.add('hidden');
+        confirmBtn.onclick = null;
+        cancelBtn.onclick = null;
+      };
+
+      confirmBtn.onclick = () => {
+        onConfirm();
+        cleanup();
+      };
+
+      cancelBtn.onclick = () => {
+        cleanup();
+      };
+    }
+
+    // Standard Clipboard Copy Function for Iframe Compatibility
+    function copyToClipboard(textToCopy, customMessage) {
+      try {
+        const dummyTextArea = document.createElement("textarea");
+        document.body.appendChild(dummyTextArea);
+        dummyTextArea.value = textToCopy;
+        dummyTextArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummyTextArea);
+        
+        showToast(customMessage || "তথ্য সফলভাবে কপি করা হয়েছে!", "success");
+      } catch (err) {
+        showToast("কপি করা সম্ভব হয়নি। দয়া করে ম্যানুয়ালি করুন।", "error");
+      }
+    }
+
+    // Upgraded Toast Notification UI
+    function showToast(msg, type = "success") {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      const toastTitle = document.getElementById('toastTitle');
+      const toastIcon = document.getElementById('toastIcon');
+      const toastIconContainer = document.getElementById('toastIconContainer');
+
+      toastMsg.textContent = msg;
+
+      if(type === "success") {
+        toastTitle.textContent = "সফল অপারেশন";
+        toastIcon.textContent = "check_circle";
+        toastIconContainer.className = "p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl";
+        toast.style.borderColor = "rgba(16, 185, 129, 0.4)";
+      } else if(type === "error") {
+        toastTitle.textContent = "সতর্কতা/ত্রুটি";
+        toastIcon.textContent = "error_outline";
+        toastIconContainer.className = "p-2.5 bg-rose-500/20 text-rose-400 rounded-xl";
+        toast.style.borderColor = "rgba(244, 63, 94, 0.4)";
+      } else {
+        toastTitle.textContent = "তথ্য আপডেট";
+        toastIcon.textContent = "info";
+        toastIconContainer.className = "p-2.5 bg-cyan-500/20 text-cyan-400 rounded-xl";
+        toast.style.borderColor = "rgba(6, 182, 212, 0.4)";
+      }
+      
+      toast.classList.remove('translate-y-[-120px]', 'opacity-0', 'scale-90', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100', 'scale-100');
+      
+      // Auto dismiss
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => {
+        hideToast();
+      }, 3500);
+    }
+
+    function hideToast() {
+      const toast = document.getElementById('toastNotification');
+      toast.classList.add('translate-y-[-120px]', 'opacity-0', 'scale-90', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100', 'scale-100');
+    }
+
+    // Highlight Query in string
+    function highlightSearch(text) {
+      if (!searchQuery) return text;
+      const index = text.toLowerCase().indexOf(searchQuery);
+      if (index >= 0) {
+        const originalPart = text.substring(index, index + searchQuery.length);
+        return text.substring(0, index) + `<span class="search-highlight">${originalPart}</span>` + text.substring(index + searchQuery.length);
+      }
+      return text;
+    }
+
+    function loadSystem() {
+      try {
+        const storedStudents = localStorage.getItem('absar_system_students');
+        const storedPayments = localStorage.getItem('absar_system_payments');
+        const storedAttendance = localStorage.getItem('absar_system_attendance');
+        const storedFee = localStorage.getItem('absar_system_fee');
+        const storedYear = localStorage.getItem('absar_system_year');
+
+        if (storedStudents) {
+          students = JSON.parse(storedStudents);
+        } else {
+          students = [...defaultStudents];
+        }
+
+        if (storedPayments) {
+          paymentData = JSON.parse(storedPayments);
+        } else {
+          resetPaymentState();
+        }
+
+        if (storedAttendance) {
+          attendanceData = JSON.parse(storedAttendance);
+        } else {
+          resetAttendanceState();
+        }
+
+        if (storedFee) {
+          document.getElementById('systemFee').value = storedFee;
+        }
+        if (storedYear) {
+          document.getElementById('systemYear').value = storedYear;
+        }
+
+      } catch (err) {
+        students = [...defaultStudents];
+        resetPaymentState();
+        resetAttendanceState();
+      }
+      populateMonthDropdowns();
+      populateDayDropdowns();
+    }
+
+    function saveSystem() {
+      localStorage.setItem('absar_system_students', JSON.stringify(students));
+      localStorage.setItem('absar_system_payments', JSON.stringify(paymentData));
+      localStorage.setItem('absar_system_attendance', JSON.stringify(attendanceData));
+      localStorage.setItem('absar_system_fee', document.getElementById('systemFee').value);
+      localStorage.setItem('absar_system_year', document.getElementById('systemYear').value);
+      updateDashboardStats();
+    }
+
+    function resetPaymentState() {
+      paymentData = {};
+      students.forEach(s => {
+        paymentData[s.id] = {};
+        for(let m=0; m<12; m++) {
+          paymentData[s.id][m] = { status: 'unpaid', amt: 0, date: '', note: '' };
+        }
+      });
+    }
+
+    function resetAttendanceState() {
+      attendanceData = {};
+      for(let m=0; m<12; m++) {
+        attendanceData[m] = {};
+        for(let d=1; d<=31; d++) {
+          attendanceData[m][d] = {};
+        }
+      }
+    }
+
+    function populateMonthDropdowns() {
+      const dropdown = document.getElementById('attendanceMonth');
+      if (!dropdown) return;
+      dropdown.innerHTML = '';
+      monthNames.forEach((name, i) => {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = name;
+        dropdown.appendChild(opt);
+      });
+      dropdown.value = new Date().getMonth();
+    }
+
+    function populateDayDropdowns() {
+      const dropdown = document.getElementById('attendanceDay');
+      if (!dropdown) return;
+      dropdown.innerHTML = '';
+      for(let i=1; i<=31; i++) {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = `${i} তারিখ`;
+        dropdown.appendChild(opt);
+      }
+      dropdown.value = new Date().getDate();
+    }
+
+    // Tab switcher with animation support
+    function switchTab(tab) {
+      currentTab = tab;
+      
+      document.getElementById('tabBtnPayment').className = "flex-1 md:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition-all duration-200 whitespace-nowrap";
+      document.getElementById('tabBtnAttendance').className = "flex-1 md:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition-all duration-200 whitespace-nowrap";
+      document.getElementById('tabBtnContact').className = "flex-1 md:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition-all duration-200 whitespace-nowrap relative";
+      document.getElementById('tabBtnStudents').className = "flex-1 md:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition-all duration-200 whitespace-nowrap";
+
+      if(tab === 'payment') {
+        document.getElementById('tabBtnPayment').classList.add('active-tab');
+        document.getElementById('paymentView').classList.remove('hidden');
+        document.getElementById('attendanceView').classList.add('hidden');
+        document.getElementById('contactView').classList.add('hidden');
+        document.getElementById('studentsView').classList.add('hidden');
+        renderPaymentTable();
+      } else if(tab === 'attendance') {
+        document.getElementById('tabBtnAttendance').classList.add('active-tab');
+        document.getElementById('paymentView').classList.add('hidden');
+        document.getElementById('attendanceView').classList.remove('hidden');
+        document.getElementById('contactView').classList.add('hidden');
+        document.getElementById('studentsView').classList.add('hidden');
+        loadAttendanceSheet();
+      } else if(tab === 'contact') {
+        document.getElementById('tabBtnContact').classList.add('active-tab');
+        document.getElementById('paymentView').classList.add('hidden');
+        document.getElementById('attendanceView').classList.add('hidden');
+        document.getElementById('contactView').classList.remove('hidden');
+        document.getElementById('studentsView').classList.add('hidden');
+        renderContactList();
+      } else if(tab === 'students') {
+        document.getElementById('tabBtnStudents').classList.add('active-tab');
+        document.getElementById('paymentView').classList.add('hidden');
+        document.getElementById('attendanceView').classList.add('hidden');
+        document.getElementById('contactView').classList.add('hidden');
+        document.getElementById('studentsView').classList.remove('hidden');
+        renderStudentManager();
+      }
+      triggerQueryResetAndSearch();
+    }
+
+    function triggerQueryResetAndSearch() {
+      triggerSearch();
+    }
+
+    // Dynamic Render of Payment Table
+    function renderPaymentTable() {
+      const fee = parseInt(document.getElementById('systemFee').value) || 1500;
+      const tbody = document.getElementById('paymentTableBody');
+      tbody.innerHTML = '';
+
+      const theadRow = document.querySelector('#paymentView thead tr');
+      const monthsElements = theadRow.querySelectorAll('.dynamic-month-th');
+      monthsElements.forEach(el => el.remove());
+
+      const targetHeaderInsert = theadRow.querySelector('th:nth-child(2)');
+      let lastElement = targetHeaderInsert;
+      monthNamesShort.forEach((m, idx) => {
+        const th = document.createElement('th');
+        th.className = "py-4 px-2 text-center min-w-[70px] border-b border-white/5 dynamic-month-th text-slate-300 font-bold text-xs";
+        th.textContent = m;
+        lastElement.after(th);
+        lastElement = th;
+      });
+
+      const filtered = students.filter(s => 
+        s.name.toLowerCase().includes(searchQuery) || 
+        s.phone.includes(searchQuery)
+      );
+
+      if(filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="16" class="py-12 text-center text-slate-500 font-semibold text-xs sm:text-sm">কোনো শিক্ষার্থীর রেকর্ড পাওয়া যায়নি</td></tr>`;
+        return;
+      }
+
+      filtered.forEach((s, idx) => {
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-white/5 transition-all duration-150 border-b border-white/5";
+
+        const baseTd = document.createElement('td');
+        baseTd.className = "py-3.5 px-4 text-center font-bold text-slate-500";
+        baseTd.textContent = String(idx + 1).replace(/[0-9]/g, c => "০১২৩৪৫৬৭৮৯"[c]);
+        tr.appendChild(baseTd);
+
+        const nameTd = document.createElement('td');
+        nameTd.className = "py-3.5 px-5 flex flex-col justify-center";
+        nameTd.innerHTML = `
+          <div class="font-bold text-slate-100 text-sm">${highlightSearch(s.name)}</div>
+          <div class="text-[11px] text-slate-400 font-mono font-semibold mt-0.5">${highlightSearch(s.phone)}</div>
+        `;
+        tr.appendChild(nameTd);
+
+        let personalCollected = 0;
+        let personalPending = 0;
+
+        for(let m=0; m<12; m++) {
+          const state = paymentData[s.id]?.[m] || { status: 'unpaid', amt: 0, date: '', note: '' };
+          const tdMonth = document.createElement('td');
+          tdMonth.className = "py-2 px-1 text-center";
+
+          let colorClass = 'bg-rose-500/10 text-rose-400 hover:bg-rose-500/25 border-rose-500/10';
+          let stateText = 'বকেয়া';
+          let displayAmount = fee;
+
+          if (state.status === 'paid') {
+            colorClass = 'bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/30 border-emerald-500/10';
+            stateText = 'পেইড';
+            displayAmount = state.amt || fee;
+            personalCollected += displayAmount;
+          } else if (state.status === 'partial') {
+            colorClass = 'bg-amber-500/15 text-amber-400 hover:bg-amber-500/30 border-amber-500/10';
+            stateText = 'আংশিক';
+            displayAmount = state.amt || 0;
+            personalCollected += displayAmount;
+            personalPending += (fee - displayAmount);
+          } else {
+            personalPending += fee;
+          }
+
+          tdMonth.innerHTML = `
+            <button onclick="openPaymentModal('${s.id}', ${m})" class="w-full py-2 px-1 rounded-xl border text-center transition-all duration-150 ${colorClass}" title="${state.note || stateText}">
+              <div class="text-[9px] font-black tracking-wider leading-none uppercase">${stateText}</div>
+              <div class="text-xs font-black mt-0.5">৳${displayAmount}</div>
+              ${state.date ? `<div class="text-[8px] text-slate-500 mt-0.5 leading-none font-semibold">${state.date.substring(5)}</div>` : ''}
+            </button>
+          `;
+          tr.appendChild(tdMonth);
+        }
+
+        const collectedTd = document.createElement('td');
+        collectedTd.className = "py-3.5 px-4 text-center font-black text-emerald-400 bg-emerald-500/5 border-l border-white/5";
+        collectedTd.textContent = `৳${personalCollected}`;
+        tr.appendChild(collectedTd);
+
+        const pendingTd = document.createElement('td');
+        pendingTd.className = "py-3.5 px-4 text-center font-black text-rose-400 bg-rose-500/5 border-l border-white/5";
+        pendingTd.textContent = personalPending > 0 ? `৳${personalPending}` : '—';
+        tr.appendChild(pendingTd);
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Modal Operations for Payment
+    function openPaymentModal(studentId, monthIndex) {
+      activeEditMonth = monthIndex;
+      activeEditStudentId = studentId;
+      
+      const s = students.find(item => item.id === studentId);
+      const fee = parseInt(document.getElementById('systemFee').value) || 1500;
+      const data = paymentData[studentId]?.[monthIndex] || { status: 'unpaid', amt: 0, date: '', note: '' };
+
+      document.getElementById('payModalStudentName').textContent = s.name;
+      document.getElementById('payModalMonthName').textContent = `${monthNames[monthIndex]} — ${document.getElementById('systemYear').value}`;
+      document.getElementById('payModalAmount').value = data.amt || fee;
+      document.getElementById('payModalDate').value = data.date || new Date().toISOString().split('T')[0];
+      document.getElementById('payModalNote').value = data.note || '';
+
+      setPayModalStatus(data.status);
+      
+      const modal = document.getElementById('paymentModal');
+      const content = document.getElementById('paymentModalContent');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+      }, 50);
+    }
+
+    function setPayModalStatus(status) {
+      activePayStatus = status;
+      const statuses = ['unpaid', 'partial', 'paid'];
+      statuses.forEach(s => {
+        const btn = document.getElementById(`payStatusBtn_${s}`);
+        if (s === status) {
+          if (s === 'paid') btn.className = "py-3 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-1 border border-emerald-500 bg-emerald-500/20 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.15)]";
+          if (s === 'partial') btn.className = "py-3 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-1 border border-amber-500 bg-amber-500/20 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.15)]";
+          if (s === 'unpaid') btn.className = "py-3 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-1 border border-rose-500 bg-rose-500/20 text-rose-400 shadow-[0_0_15px_rgba(244,63,94,0.15)]";
+        } else {
+          btn.className = "py-3 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-1 border border-white/5 bg-slate-950/50 text-slate-400 hover:bg-slate-950/80 hover:text-slate-200 transition-all";
+        }
+      });
+
+      const fee = parseInt(document.getElementById('systemFee').value) || 1500;
+      if (status === 'paid') {
+        document.getElementById('payModalAmount').value = fee;
+      } else if (status === 'unpaid') {
+        document.getElementById('payModalAmount').value = 0;
+      }
+    }
+
+    function closePaymentModal() {
+      const content = document.getElementById('paymentModalContent');
+      content.classList.remove('scale-100', 'opacity-100');
+      content.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        document.getElementById('paymentModal').classList.add('hidden');
+      }, 200);
+    }
+
+    function savePaymentModalData() {
+      if(!activeEditStudentId || activeEditMonth === null) return;
+      
+      const updatedStatus = activePayStatus;
+      const updatedAmt = parseInt(document.getElementById('payModalAmount').value) || 0;
+      const updatedDate = document.getElementById('payModalDate').value;
+      const updatedNote = document.getElementById('payModalNote').value;
+
+      if (!paymentData[activeEditStudentId]) {
+        paymentData[activeEditStudentId] = {};
+      }
+
+      paymentData[activeEditStudentId][activeEditMonth] = {
+        status: updatedStatus,
+        amt: updatedAmt,
+        date: updatedDate,
+        note: updatedNote
+      };
+
+      saveSystem();
+      renderPaymentTable();
+      closePaymentModal();
+      showToast("পেমেন্ট ডেটা সফলভাবে আপডেট করা হয়েছে।");
+    }
+
+    function markAllMonthsPaid() {
+      showCustomAlert(
+        "সকল পেমেন্ট পরিশোধ করুন?",
+        "আপনি কি নিশ্চিত যে সমস্ত শিক্ষার্থীর সকল মাসের পেমেন্ট সম্পূর্ণ পরিশোধিত (Paid) হিসেবে চিহ্নিত করতে চান?",
+        () => {
+          const fee = parseInt(document.getElementById('systemFee').value) || 1500;
+          const today = new Date().toISOString().split('T')[0];
+          students.forEach(s => {
+            paymentData[s.id] = {};
+            for(let m=0; m<12; m++) {
+              paymentData[s.id][m] = {
+                status: 'paid',
+                amt: fee,
+                date: today,
+                note: 'এক ক্লিকে সম্পূর্ণ পরিশোধিত'
+              };
+            }
+          });
+          saveSystem();
+          renderPaymentTable();
+          showToast("সমস্ত রেকর্ড পেইড করা হয়েছে।");
+        }
+      );
+    }
+
+    // Dynamic Attendance Management Panel
+    function loadAttendanceSheet() {
+      const activeMonth = parseInt(document.getElementById('attendanceMonth').value) || 0;
+      const activeDay = parseInt(document.getElementById('attendanceDay').value) || 1;
+      const tbody = document.getElementById('attendanceTableBody');
+      tbody.innerHTML = '';
+
+      const filtered = students.filter(s => 
+        s.name.toLowerCase().includes(searchQuery) || 
+        s.phone.includes(searchQuery)
+      );
+
+      let presentList = [];
+      let absentList = [];
+      let leaveList = [];
+
+      filtered.forEach((s, idx) => {
+        const state = attendanceData[activeMonth]?.[activeDay]?.[s.id] || 'unmarked';
+        
+        if (state === 'present') presentList.push(s.name);
+        else if (state === 'absent') absentList.push(s.name);
+        else if (state === 'leave') leaveList.push(s.name);
+
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-white/5 transition-all duration-150 border-b border-white/5";
+
+        tr.innerHTML = `
+          <td class="py-4 px-4 text-center font-bold text-slate-500">${String(idx + 1).replace(/[0-9]/g, c => "০১২৩৪৫৬৭৮৯"[c])}</td>
+          <td class="py-4 px-5">
+            <div class="font-bold text-slate-100 text-sm">${highlightSearch(s.name)}</div>
+            <div class="text-[11px] text-slate-400 font-mono font-semibold mt-0.5">${highlightSearch(s.phone)}</div>
+          </td>
+        `;
+
+        const tdBtns = document.createElement('td');
+        tdBtns.className = "py-4 px-4 text-center";
+        tdBtns.innerHTML = `
+          <div class="inline-flex rounded-xl bg-slate-950/60 p-1 gap-1 border border-white/5 shadow-inner">
+            <button onclick="markStudentAttendance(${activeMonth}, ${activeDay}, '${s.id}', 'present')" class="px-4 py-1.5 rounded-lg text-[11px] font-bold transition-all duration-150 ${state === 'present' ? 'bg-emerald-500 text-white shadow-[0_0_12px_rgba(16,185,129,0.3)]' : 'text-slate-400 hover:bg-slate-800' || 'text-slate-400'}">উপস্থিত</button>
+            <button onclick="markStudentAttendance(${activeMonth}, ${activeDay}, '${s.id}', 'absent')" class="px-4 py-1.5 rounded-lg text-[11px] font-bold transition-all duration-150 ${state === 'absent' ? 'bg-rose-500 text-white shadow-[0_0_12px_rgba(244,63,94,0.3)]' : 'text-slate-400 hover:bg-slate-800' || 'text-slate-400'}">অনুপস্থিত</button>
+            <button onclick="markStudentAttendance(${activeMonth}, ${activeDay}, '${s.id}', 'leave')" class="px-4 py-1.5 rounded-lg text-[11px] font-bold transition-all duration-150 ${state === 'leave' ? 'bg-amber-500 text-white shadow-[0_0_12px_rgba(245,158,11,0.3)]' : 'text-slate-400 hover:bg-slate-800' || 'text-slate-400'}">ছুটি</button>
+          </div>
+        `;
+        tr.appendChild(tdBtns);
+
+        const tdReport = document.createElement('td');
+        tdReport.className = "py-4 px-4 text-center font-semibold text-[11px] text-slate-400 bg-white/5";
+        const perf = calculateMonthlyPerformance(s.id, activeMonth);
+        tdReport.innerHTML = `
+          <span class="text-emerald-400 font-bold">${perf.present} দিন উপস্থিত</span> | 
+          <span class="text-rose-400 font-bold">${perf.absent} দিন অনুপস্থিত</span>
+        `;
+        tr.appendChild(tdReport);
+
+        tbody.appendChild(tr);
+      });
+
+      // Update Today's live lists with subtle badge items
+      document.getElementById('livePresentCount').textContent = `${presentList.length} জন`;
+      const pNamesContainer = document.getElementById('livePresentNames');
+      pNamesContainer.innerHTML = '';
+      if(presentList.length === 0) pNamesContainer.innerHTML = '<span class="text-slate-500 italic text-xs">কেউ উপস্থিত নেই</span>';
+      presentList.forEach(name => {
+        pNamesContainer.innerHTML += `<span class="bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 px-2 py-0.5 rounded-md text-[10px] font-bold">${name}</span>`;
+      });
+
+      document.getElementById('liveAbsentCount').textContent = `${absentList.length} জন`;
+      const aNamesContainer = document.getElementById('liveAbsentNames');
+      aNamesContainer.innerHTML = '';
+      if(absentList.length === 0) aNamesContainer.innerHTML = '<span class="text-slate-500 italic text-xs">কেউ অনুপস্থিত নেই</span>';
+      absentList.forEach(name => {
+        aNamesContainer.innerHTML += `<span class="bg-rose-500/10 text-rose-300 border border-rose-500/20 px-2 py-0.5 rounded-md text-[10px] font-bold">${name}</span>`;
+      });
+
+      document.getElementById('liveLeaveCount').textContent = `${leaveList.length} জন`;
+      const lNamesContainer = document.getElementById('liveLeaveNames');
+      lNamesContainer.innerHTML = '';
+      if(leaveList.length === 0) lNamesContainer.innerHTML = '<span class="text-slate-500 italic text-xs">কেউ ছুটিতে নেই</span>';
+      leaveList.forEach(name => {
+        lNamesContainer.innerHTML += `<span class="bg-amber-500/10 text-amber-300 border border-amber-500/20 px-2 py-0.5 rounded-md text-[10px] font-bold">${name}</span>`;
+      });
+
+      if(filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" class="py-12 text-center text-slate-500 font-semibold text-xs sm:text-sm">কোনো শিক্ষার্থীর রেকর্ড পাওয়া যায়নি</td></tr>`;
+      }
+    }
+
+    function markStudentAttendance(month, day, studentId, status) {
+      if (!attendanceData[month]) attendanceData[month] = {};
+      if (!attendanceData[month][day]) attendanceData[month][day] = {};
+      attendanceData[month][day][studentId] = status;
+      saveSystem();
+      loadAttendanceSheet();
+    }
+
+    function setAllAttendance(status) {
+      const activeMonth = parseInt(document.getElementById('attendanceMonth').value) || 0;
+      const activeDay = parseInt(document.getElementById('attendanceDay').value) || 1;
+
+      if (!attendanceData[activeMonth]) attendanceData[activeMonth] = {};
+      if (!attendanceData[activeMonth][activeDay]) attendanceData[activeMonth][activeDay] = {};
+
+      students.forEach(s => {
+        attendanceData[activeMonth][activeDay][s.id] = status;
+      });
+
+      saveSystem();
+      loadAttendanceSheet();
+      showToast("সবাইকে হাজিরা আপডেট করা হয়েছে।");
+    }
+
+    function calculateMonthlyPerformance(studentId, monthIndex) {
+      let present = 0;
+      let absent = 0;
+      for (let d = 1; d <= 31; d++) {
+        const state = attendanceData[monthIndex]?.[d]?.[studentId];
+        if (state === 'present') present++;
+        if (state === 'absent') absent++;
+      }
+      return { present, absent };
+    }
+
+    // STUDENTS MANAGER VIEWS & CRUD LOGIC
+    function renderStudentManager() {
+      const tbody = document.getElementById('studentsTableBody');
+      tbody.innerHTML = '';
+
+      const filtered = students.filter(s => 
+        s.name.toLowerCase().includes(searchQuery) || 
+        s.phone.includes(searchQuery)
+      );
+
+      if(filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" class="py-12 text-center text-slate-500 font-semibold text-xs sm:text-sm">কোনো শিক্ষার্থীর রেকর্ড পাওয়া যায়নি</td></tr>`;
+        return;
+      }
+
+      filtered.forEach((s, idx) => {
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-white/5 transition-all duration-150 border-b border-white/5";
+
+        tr.innerHTML = `
+          <td class="py-4 px-4 text-center font-bold text-slate-500">${String(idx + 1).replace(/[0-9]/g, c => "০১২৩৪৫৬৭৮৯"[c])}</td>
+          <td class="py-4 px-5 font-bold text-slate-100">${highlightSearch(s.name)}</td>
+          <td class="py-4 px-5 font-medium text-slate-300 font-mono">${highlightSearch(s.phone)}</td>
+          <td class="py-4 px-4 text-center">
+            <div class="flex items-center justify-center gap-2">
+              <button onclick="openEditStudentModal('${s.id}')" class="p-2 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 rounded-xl transition-all" title="শিক্ষার্থী এডিট">
+                <span class="material-symbols-rounded text-base">edit</span>
+              </button>
+              <button onclick="deleteStudent('${s.id}')" class="p-2 bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 rounded-xl transition-all" title="শিক্ষার্থী রিমুভ">
+                <span class="material-symbols-rounded text-base">delete</span>
+              </button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function openAddStudentModal() {
+      activeStudentEditId = null;
+      document.getElementById('studentModalTitle').textContent = "নতুন শিক্ষার্থী যুক্ত করুন";
+      document.getElementById('studModalName').value = '';
+      document.getElementById('studModalPhone').value = '';
+      
+      const modal = document.getElementById('studentModal');
+      const content = document.getElementById('studentModalContent');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+      }, 50);
+    }
+
+    function openEditStudentModal(id) {
+      activeStudentEditId = id;
+      const s = students.find(item => item.id === id);
+      document.getElementById('studentModalTitle').textContent = "শিক্ষার্থী তথ্য এডিট";
+      document.getElementById('studModalName').value = s.name;
+      document.getElementById('studModalPhone').value = s.phone;
+      
+      const modal = document.getElementById('studentModal');
+      const content = document.getElementById('studentModalContent');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+      }, 50);
+    }
+
+    function closeStudentModal() {
+      const content = document.getElementById('studentModalContent');
+      content.classList.remove('scale-100', 'opacity-100');
+      content.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        document.getElementById('studentModal').classList.add('hidden');
+      }, 200);
+    }
+
+    function saveStudentModalData() {
+      const name = document.getElementById('studModalName').value.trim();
+      const phone = document.getElementById('studModalPhone').value.trim();
+
+      if (!name || !phone) {
+        showToast("দয়া করে নাম এবং মোবাইল নম্বর ইনপুট দিন!", "error");
+        return;
+      }
+
+      if (activeStudentEditId) {
+        const sIdx = students.findIndex(item => item.id === activeStudentEditId);
+        if (sIdx !== -1) {
+          students[sIdx].name = name;
+          students[sIdx].phone = phone;
+        }
+        showToast("শিক্ষার্থীর বিবরণী আপডেট করা হয়েছে।");
+      } else {
+        const newId = String(Date.now());
+        const newSl = String(students.length + 1).padStart(2, '০');
+        students.push({ id: newId, sl: newSl, name, phone });
+
+        paymentData[newId] = {};
+        for(let m=0; m<12; m++) {
+          paymentData[newId][m] = { status: 'unpaid', amt: 0, date: '', note: '' };
+        }
+        showToast("নতুন শিক্ষার্থী সফলভাবে ডাটাবেজে যুক্ত করা হয়েছে।");
+      }
+
+      saveSystem();
+      closeStudentModal();
+      
+      if (currentTab === 'payment') renderPaymentTable();
+      else if (currentTab === 'attendance') loadAttendanceSheet();
+      else if (currentTab === 'contact') renderContactList();
+      else if (currentTab === 'students') renderStudentManager();
+    }
+
+    function deleteStudent(id) {
+      const s = students.find(item => item.id === id);
+      showCustomAlert(
+        "শিক্ষার্থী ডিলিট করুন?",
+        `আপনি কি সত্যিই "${s.name}" কে রিমুভ করতে চান? এর ফলে তার উপস্থিতি ও পেমেন্ট রেকর্ড স্থায়ীভাবে মুছে যাবে!`,
+        () => {
+          students = students.filter(item => item.id !== id);
+          delete paymentData[id];
+
+          for (let m=0; m<12; m++) {
+            for (let d=1; d<=31; d++) {
+              if (attendanceData[m]?.[d]?.[id]) {
+                delete attendanceData[m][d][id];
+              }
+            }
+          }
+
+          saveSystem();
+          showToast("শিক্ষার্থী সফলভাবে ডাটাবেজ থেকে মুছে ফেলা হয়েছে।");
+          
+          if (currentTab === 'payment') renderPaymentTable();
+          else if (currentTab === 'attendance') loadAttendanceSheet();
+          else if (currentTab === 'contact') renderContactList();
+          else if (currentTab === 'students') renderStudentManager();
+        }
+      );
+    }
+
+    // URGENT CONTACT VIEWPORT
+    function switchContactFilter(filter) {
+      currentContactFilter = filter;
+      const btnUnpaid = document.getElementById('btnContactFilter_unpaid');
+      const btnAbsent = document.getElementById('btnContactFilter_absent');
+      const unpaidDrop = document.getElementById('unpaidFilterDropdownContainer');
+      const absentDrop = document.getElementById('absentFilterDropdownContainer');
+
+      btnUnpaid.className = "px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all";
+      btnAbsent.className = "px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all";
+
+      if (filter === 'unpaid') {
+        btnUnpaid.className = "px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md transition-all";
+        btnAbsent.className = "px-4 py-2 bg-white/5 text-slate-300 rounded-xl text-xs font-bold flex items-center gap-1.5 border border-white/10 hover:bg-white/10 transition-all";
+        
+        unpaidDrop.classList.remove('hidden');
+        absentDrop.classList.add('hidden');
+        
+        document.getElementById('contactFilterStatusText').textContent = "বকেয়া থাকা শিক্ষার্থীদের সর্বমোট তথ্য ও মাসের তালিকা নিচে দেওয়া হল:";
+        document.getElementById('contactColDynamicLabel').textContent = "বকেয়া মাসসমূহ ও মোট পরিমাণ";
+      } else {
+        btnAbsent.className = "px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md transition-all";
+        btnUnpaid.className = "px-4 py-2 bg-white/5 text-slate-300 rounded-xl text-xs font-bold flex items-center gap-1.5 border border-white/10 hover:bg-white/10 transition-all";
+        
+        unpaidDrop.classList.add('hidden');
+        absentDrop.classList.remove('hidden');
+        
+        document.getElementById('contactFilterStatusText').textContent = "অনুপস্থিত শিক্ষার্থীদের তালিকা নিচে দেওয়া হল:";
+        document.getElementById('contactColDynamicLabel').textContent = "আজ/চলতি মাসের অনুপস্থিতি";
+      }
+
+      renderContactList();
+    }
+
+    // Open Message Composer Modal (Dynamic Template customizer)
+    function openMessageComposer(name, phone, text) {
+      document.getElementById('composerStudentName').textContent = name;
+      document.getElementById('composerStudentPhone').textContent = phone;
+      
+      const textarea = document.getElementById('composerTextarea');
+      textarea.value = text;
+      
+      // Setup live char counter
+      const updateCharCount = () => {
+        document.getElementById('composerCharCount').textContent = `${textarea.value.length} টি অক্ষর`;
+      };
+      textarea.oninput = updateCharCount;
+      updateCharCount();
+
+      // Configure Dynamic Actions on buttons click
+      const formattedPhone = phone.startsWith('0') ? `880${phone.substring(1)}` : phone;
+
+      document.getElementById('composerDispatchWhatsappBtn').onclick = () => {
+        const updatedMsg = textarea.value;
+        const encodedText = encodeURIComponent(updatedMsg);
+        const webUrl = `https://api.whatsapp.com/send/?phone=${formattedPhone}&text=${encodedText}`;
+        copyToClipboard(updatedMsg, "বার্তা কপি হয়েছে! এক ক্লিকে সরাসরি হোয়াটসঅ্যাপ খুলছে...");
+        window.open(webUrl, '_blank');
+        closeMessageComposer();
+      };
+
+      document.getElementById('composerDispatchSmsBtn').onclick = () => {
+        const updatedMsg = textarea.value;
+        const encodedText = encodeURIComponent(updatedMsg);
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const smsUrl = isIOS ? `sms:${phone}&body=${encodedText}` : `sms:${phone}?body=${encodedText}`;
+        copyToClipboard(updatedMsg, "বার্তা কপি করা হয়েছে এবং এসএমএস উইন্ডো ওপেন হচ্ছে...");
+        window.open(smsUrl, '_blank');
+        closeMessageComposer();
+      };
+
+      document.getElementById('composerDispatchCopyBtn').onclick = () => {
+        const updatedMsg = textarea.value;
+        copyToClipboard(updatedMsg, "মেসেজ সফলভাবে ক্লিপবোর্ডে কপি করা হয়েছে!");
+        closeMessageComposer();
+      };
+
+      const modal = document.getElementById('messageComposerModal');
+      const content = document.getElementById('messageComposerContent');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+      }, 50);
+    }
+
+    function closeMessageComposer() {
+      const content = document.getElementById('messageComposerContent');
+      content.classList.remove('scale-100', 'opacity-100');
+      content.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        document.getElementById('messageComposerModal').classList.add('hidden');
+      }, 200);
+    }
+
+    function makeCallDirect(phone) {
+      copyToClipboard(phone, "নম্বর কপি করা হয়েছে এবং কল করার জন্য ডায়াল প্যাড ওপেন হচ্ছে...");
+      
+      const tempLink = document.createElement('a');
+      tempLink.href = `tel:${phone}`;
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+    }
+
+    // Intelligent Instant One-Click Direct Messenger Generator
+    function sendWhatsAppInstantDirect(phone, text) {
+      const formattedPhone = phone.startsWith('0') ? `880${phone.substring(1)}` : phone;
+      const encodedText = encodeURIComponent(text);
+      const webUrl = `https://api.whatsapp.com/send/?phone=${formattedPhone}&text=${encodedText}`;
+      
+      // Copy to clipboard for robust fallback utility
+      copyToClipboard(text, "বার্তা ক্লিপবোর্ডে কপি করা হয়েছে এবং ইন্সট্যান্ট হোয়াটসঅ্যাপ চ্যাট উইন্ডো ওপেন হচ্ছে...");
+      
+      // Open window directly
+      window.open(webUrl, '_blank');
+    }
+
+    function renderContactList() {
+      const tbody = document.getElementById('contactTableBody');
+      tbody.innerHTML = '';
+
+      const fee = parseInt(document.getElementById('systemFee').value) || 1500;
+      const currentMonthIndex = new Date().getMonth(); 
+      const currentDay = new Date().getDate(); 
+      const currentYearStr = document.getElementById('systemYear').value || '২০২৬';
+
+      const filteredStudents = students.filter(s => 
+        s.name.toLowerCase().includes(searchQuery) || 
+        s.phone.includes(searchQuery)
+      );
+
+      let listItems = [];
+
+      if (currentContactFilter === 'unpaid') {
+        const unpaidFilterType = document.getElementById('contactUnpaidDropdown').value; // 'all', '1', '2', '3'
+
+        filteredStudents.forEach(s => {
+          let unpaidMonths = [];
+          let totalDue = 0;
+          let countUnpaid = 0;
+
+          // Track unpaid months up to current month dynamically
+          for (let m = 0; m <= currentMonthIndex; m++) {
+            const state = paymentData[s.id]?.[m] || { status: 'unpaid', amt: 0 };
+            if (state.status === 'unpaid') {
+              unpaidMonths.push(monthNames[m]);
+              totalDue += fee;
+              countUnpaid++;
+            } else if (state.status === 'partial') {
+              const due = fee - (state.amt || 0);
+              if (due > 0) {
+                unpaidMonths.push(`${monthNames[m]} (আংশিক)`);
+                totalDue += due;
+                countUnpaid++;
+              }
+            }
+          }
+
+          // Apply Dropdown Filter criteria
+          let shouldInclude = false;
+          if (unpaidFilterType === 'all' && totalDue > 0) {
+            shouldInclude = true;
+          } else if (unpaidFilterType === '1' && countUnpaid === 1) {
+            shouldInclude = true;
+          } else if (unpaidFilterType === '2' && countUnpaid === 2) {
+            shouldInclude = true;
+          } else if (unpaidFilterType === '3' && countUnpaid >= 3) {
+            shouldInclude = true;
+          }
+
+          if (shouldInclude) {
+            const monthsListStr = unpaidMonths.join(', ');
+            listItems.push({
+              student: s,
+              metricLabel: `৳${totalDue} বকেয়া`,
+              subMetric: `${countUnpaid} মাসের বকেয়া`,
+              unpaidMonthsList: monthsListStr,
+              metricColor: 'text-rose-400 font-extrabold',
+              messageText: `আসসালামু আলাইকুম, আবছার স্যার'স কোচিং সেন্টার থেকে জানানো যাচ্ছে যে, শিক্ষার্থী ${s.name}-এর কোচিং ফি বাবদ বিগত [${monthsListStr}] মাসসমূহের সর্বমোট ৳${totalDue} বকেয়া রয়েছে। অনুগ্রহ করে বকেয়া ফি দ্রুত পরিশোধ করুন। ধন্যবাদ!`
+            });
+          }
+        });
+      } else {
+        const absentFilterType = document.getElementById('contactAbsentDropdown').value; // 'today', 'multi'
+
+        filteredStudents.forEach(s => {
+          const attState = attendanceData[currentMonthIndex]?.[currentDay]?.[s.id] || 'unmarked';
+          const performance = calculateMonthlyPerformance(s.id, currentMonthIndex);
+
+          // Find exact dates marked absent in the current month
+          let absentDates = [];
+          for (let d = 1; d <= 31; d++) {
+            const state = attendanceData[currentMonthIndex]?.[d]?.[s.id];
+            if (state === 'absent') {
+              absentDates.push(`${d} ${monthNames[currentMonthIndex]}`);
+            }
+          }
+
+          let shouldInclude = false;
+          if (absentFilterType === 'today' && attState === 'absent') {
+            shouldInclude = true;
+          } else if (absentFilterType === 'multi' && performance.absent >= 3) {
+            shouldInclude = true;
+          }
+
+          if (shouldInclude) {
+            const formattedAbsentDates = absentDates.join(', ') + ` ${currentYearStr}`;
+            let alertMsg = '';
+            
+            if (absentFilterType === 'today') {
+              alertMsg = `আসসালামু আলাইকুম, অভিভাবক মহোদয়, আজ (${currentDay} ${monthNames[currentMonthIndex]} ${currentYearStr}) আপনার সন্তান ${s.name} কোচিং ক্লাসে অনুপস্থিত ছিল। নিয়মিত ক্লাসে উপস্থিতি নিশ্চিত করার জন্য অনুরোধ করা হলো। আবছার স্যার'স কোচিং সেন্টার।`;
+            } else {
+              alertMsg = `আসসালামু আলাইকুম, অভিভাবক মহোদয়, চলতি ${monthNames[currentMonthIndex]} মাসে আপনার সন্তান ${s.name} সর্বমোট ${performance.absent} দিন অনুপস্থিত ছিল। অনুপস্থিতির তারিখসমূহ হলো: [${formattedAbsentDates}]। নিয়মিত ক্লাসে উপস্থিতি নিশ্চিত করার জন্য অনুরোধ করা হলো। আবছার স্যার'স কোচিং সেন্টার।`;
+            }
+
+            listItems.push({
+              student: s,
+              metricLabel: absentFilterType === 'today' ? 'আজ অনুপস্থিত' : `${performance.absent} দিন অনুপস্থিত`,
+              subMetric: absentFilterType === 'today' ? `চলতি মাসে মোট ${performance.absent} দিন` : `অনুপস্থিতির হার বেশি`,
+              unpaidMonthsList: absentFilterType === 'today' ? `${currentDay} ${monthNames[currentMonthIndex]} ${currentYearStr}` : absentDates.join(', '),
+              metricColor: 'text-amber-400 font-extrabold',
+              messageText: alertMsg
+            });
+          }
+        });
+      }
+
+      const badge = document.getElementById('contactBadge');
+      if (listItems.length > 0) {
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+
+      if (listItems.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" class="py-12 text-center text-slate-500 font-semibold text-xs sm:text-sm">এই ক্যাটাগরিতে কোনো শিক্ষার্থী পাওয়া যায়নি</td></tr>`;
+        return;
+      }
+
+      listItems.forEach((item, idx) => {
+        const s = item.student;
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-white/5 transition-all duration-150 border-b border-white/5";
+
+        const escapedMessageText = item.messageText.replace(/'/g, "\\'");
+        const escapedName = s.name.replace(/'/g, "\\'");
+
+        tr.innerHTML = `
+          <td class="py-4 px-4 text-center font-bold text-slate-500">${String(idx + 1).replace(/[0-9]/g, c => "০১২৩৪৫৬৭৮৯"[c])}</td>
+          <td class="py-4 px-5">
+            <div class="font-bold text-slate-100 text-sm">${highlightSearch(s.name)}</div>
+            <div class="text-[11px] text-slate-400 font-mono font-semibold mt-0.5">${highlightSearch(s.phone)}</div>
+          </td>
+          <td class="py-4 px-4 text-center">
+            <div class="${item.metricColor} text-xs sm:text-sm">${item.metricLabel}</div>
+            <div class="text-[10px] text-slate-400 mt-1 font-semibold">${item.subMetric}</div>
+            <div class="text-[9px] text-slate-500 mt-0.5 italic max-w-[160px] mx-auto truncate" title="${item.unpaidMonthsList}">[${item.unpaidMonthsList}]</div>
+          </td>
+          <td class="py-4 px-6 text-center">
+            <div class="flex flex-wrap items-center justify-center gap-1.5">
+              
+              <!-- One-Click Instant WhatsApp Button -->
+              <button onclick="sendWhatsAppInstantDirect('${s.phone}', '${escapedMessageText}')" class="flex items-center gap-1.5 text-[11px] font-extrabold bg-emerald-500 hover:bg-emerald-600 text-white px-3.5 py-2 rounded-xl shadow-[0_0_15px_rgba(16,185,129,0.2)] transition-all duration-150 active:scale-95">
+                <span class="material-symbols-rounded text-sm">chat_bubble</span> WhatsApp সরাসরি
+              </button>
+
+              <!-- Optional Composer -->
+              <button onclick="openMessageComposer('${escapedName}', '${s.phone}', '${escapedMessageText}')" class="flex items-center gap-1.5 text-[11px] font-extrabold bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 px-3 py-2 rounded-xl border border-indigo-500/20 transition-all">
+                <span class="material-symbols-rounded text-sm">edit_note</span> কাস্টম বার্তা
+              </button>
+
+              <!-- Direct Call -->
+              <button onclick="makeCallDirect('${s.phone}')" class="p-2 bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 rounded-xl transition-all" title="সরাসরি কল করুন">
+                <span class="material-symbols-rounded text-sm">call</span>
+              </button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+
+    // Global Core States UI updates
+    function updateDashboardStats() {
+      let totalCollected = 0;
+      let totalPending = 0;
+      const fee = parseInt(document.getElementById('systemFee').value) || 1500;
+
+      students.forEach(s => {
+        for(let m=0; m<12; m++) {
+          const state = paymentData[s.id]?.[m];
+          if(state) {
+            if(state.status === 'paid') {
+              totalCollected += state.amt || fee;
+            } else if(state.status === 'partial') {
+              totalCollected += state.amt || 0;
+              totalPending += (fee - (state.amt || 0));
+            } else {
+              totalPending += fee;
+            }
+          } else {
+            totalPending += fee;
+          }
+        }
+      });
+
+      // Attendance Metrics calculation
+      let totalDaysTracked = 0;
+      let totalPresentCount = 0;
+
+      for (let m = 0; m < 12; m++) {
+        for (let d = 1; d <= 31; d++) {
+          const dayRecords = attendanceData[m]?.[d];
+          if (dayRecords && Object.keys(dayRecords).length > 0) {
+            Object.values(dayRecords).forEach(val => {
+              totalDaysTracked++;
+              if (val === 'present') totalPresentCount++;
+            });
+          }
+        }
+      }
+
+      const attendanceRatio = totalDaysTracked > 0 ? Math.round((totalPresentCount / totalDaysTracked) * 100) : 0;
+
+      document.getElementById('dashCollected').textContent = `৳${totalCollected.toLocaleString('bn-BD')}`;
+      document.getElementById('dashDue').textContent = `৳${totalPending.toLocaleString('bn-BD')}`;
+      document.getElementById('dashAttendance').textContent = `${attendanceRatio}%`;
+      document.getElementById('dashAttendanceProgress').style.width = `${attendanceRatio}%`;
+      document.getElementById('dashStudents').textContent = `${students.length} জন`;
+
+      // Pre-check for urgent badge
+      const currentMonthIndex = new Date().getMonth();
+      const currentDay = new Date().getDate();
+      let alertRequired = false;
+
+      for(let i=0; i<students.length; i++) {
+        const s = students[i];
+        const payState = paymentData[s.id]?.[currentMonthIndex] || { status: 'unpaid', amt: 0 };
+        if (payState.status === 'unpaid' || (payState.status === 'partial' && (payState.amt || 0) < fee)) {
+          alertRequired = true;
+          break;
+        }
+        const attState = attendanceData[currentMonthIndex]?.[currentDay]?.[s.id] || 'unmarked';
+        if (attState === 'absent') {
+          alertRequired = true;
+          break;
+        }
+      }
+
+      const badge = document.getElementById('contactBadge');
+      if (alertRequired) {
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    // Interactive Filters
+    function triggerSearch() {
+      searchQuery = document.getElementById('mainSearch').value.toLowerCase().trim();
+      if(currentTab === 'payment') renderPaymentTable();
+      else if(currentTab === 'attendance') loadAttendanceSheet();
+      else if(currentTab === 'contact') renderContactList();
+      else if(currentTab === 'students') renderStudentManager();
+    }
+
+    // System Fee / Year Change Handlers
+    document.getElementById('systemFee').addEventListener('input', () => {
+      saveSystem();
+      if(currentTab === 'payment') renderPaymentTable();
+    });
+    document.getElementById('systemYear').addEventListener('input', () => {
+      saveSystem();
+      if(currentTab === 'payment') renderPaymentTable();
+    });
+
+    // Reset Function
+    function confirmResetAll(target) {
+      showCustomAlert(
+        "সমস্ত তথ্য মুছে ফেলবেন?",
+        "আপনি কি নিশ্চিত যে সমস্ত পেমেন্ট রেকর্ড ক্লিয়ার করতে চান? এই প্রক্রিয়াটি আর ফিরিয়ে আনা সম্ভব নয়।",
+        () => {
+          if(target === 'payment') {
+            resetPaymentState();
+          }
+          saveSystem();
+          renderPaymentTable();
+          showToast("সমস্ত ডেটা সফলভাবে রিসেট করা হয়েছে।", "error");
+        }
+      );
+    }
+
+    // EXPORT AND IMPORT SYSTEM FUNCTIONALITIES
+    function exportFullData() {
+      const dataPayload = JSON.stringify({
+        students,
+        paymentData,
+        attendanceData,
+        systemFee: document.getElementById('systemFee').value,
+        systemYear: document.getElementById('systemYear').value,
+        exportedAt: new Date().toISOString()
+      }, null, 2);
+
+      const blob = new Blob([dataPayload], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Absar_Sir_Backup_${document.getElementById('systemYear').value}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast("ব্যাকআপ সফলভাবে ডাউনলোড হয়েছে।");
+    }
+
+    function importFullData(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const imported = JSON.parse(e.target.result);
+          if (imported.students && imported.paymentData && imported.attendanceData) {
+            students = imported.students;
+            paymentData = imported.paymentData;
+            attendanceData = imported.attendanceData;
+            
+            if (imported.systemFee) document.getElementById('systemFee').value = imported.systemFee;
+            if (imported.systemYear) document.getElementById('systemYear').value = imported.systemYear;
+
+            saveSystem();
+            switchTab(currentTab);
+            showToast("আপনার ব্যাকআপ ফাইলটি সফলভাবে রিস্টোর হয়েছে!", "success");
+          } else {
+            showToast("ফাইলটির ফরম্যাট সঠিক নয়।", "error");
+          }
+        } catch(err) {
+          showToast("দুঃখিত, ব্যাকআপ লোড করার সময় একটি ত্রুটি ঘটেছে!", "error");
+        }
+      };
+      reader.readAsText(file);
+      event.target.value = ''; 
+    }
+
+    window.onload = function() {
+      loadSystem();
+      renderPaymentTable();
+      updateDashboardStats();
+    };
+  </script>
+</body>
+</html>
